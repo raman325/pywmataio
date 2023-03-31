@@ -1,0 +1,26 @@
+{
+    "Trains": [
+        {
+            "Car": null,
+            "Destination": "GLENMONT",
+            "DestinationCode": "B11",
+            "DestinationName": "Glenmont",
+            "Group": "2",
+            "Line": "RD",
+            "LocationCode": "A15",
+            "LocationName": "Shady Grove",
+            "Min": "9"
+        },
+        {
+            "Car": null,
+            "Destination": "GLENMONT",
+            "DestinationCode": "B11",
+            "DestinationName": "Glenmont",
+            "Group": "1",
+            "Line": "RD",
+            "LocationCode": "A15",
+            "LocationName": "Shady Grove",
+            "Min": "21"
+        }
+    ]
+}

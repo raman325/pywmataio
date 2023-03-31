@@ -1,0 +1,58 @@
+{
+    "BusIncidents": [
+        {
+            "IncidentID": "B1D890F9-0A65-4FA4-A9AA-565B61CEC94A",
+            "IncidentType": "Alert",
+            "RoutesAffected": [
+                "96"
+            ],
+            "Description": "Due to an incident at Tenleytown Station on the 96 route, buses are experiencing delays.",
+            "DateUpdated": "2023-03-31T22:13:54"
+        },
+        {
+            "IncidentID": "4DDC6A82-1285-439C-B6DE-533853338B0F",
+            "IncidentType": "Alert",
+            "RoutesAffected": [
+                "J2"
+            ],
+            "Description": "Due to bus operator availability, some trips may experience delays on the J2 route.",
+            "DateUpdated": "2023-03-31T22:06:30"
+        },
+        {
+            "IncidentID": "5680A51C-6C94-417E-9B67-9A3A90FAA13D",
+            "IncidentType": "Alert",
+            "RoutesAffected": [
+                "REX"
+            ],
+            "Description": "Due to a mechanical issue on Richmond Hwy at Belford Dr on the REX route, buses are experiencing delays.",
+            "DateUpdated": "2023-03-31T21:26:15"
+        },
+        {
+            "IncidentID": "4F4772BE-1438-4AE8-ABB6-879B725C276F",
+            "IncidentType": "Alert",
+            "RoutesAffected": [
+                "A6"
+            ],
+            "Description": "Due to bus operator availability, some trips may experience delays on the A6 route.",
+            "DateUpdated": "2023-03-31T21:15:11"
+        },
+        {
+            "IncidentID": "CAC547D2-CC58-43A4-88D9-E90B706BD9B0",
+            "IncidentType": "Alert",
+            "RoutesAffected": [
+                "A4"
+            ],
+            "Description": "Due to bus operator availability, some trips may experience delays on the A4 route.",
+            "DateUpdated": "2023-03-31T21:14:17"
+        },
+        {
+            "IncidentID": "68AC29CE-A860-41B2-9D16-55A19FDAAEDD",
+            "IncidentType": "Alert",
+            "RoutesAffected": [
+                "A8"
+            ],
+            "Description": "Due to bus operator availability, some trips may experience delays on the A8 route.",
+            "DateUpdated": "2023-03-31T21:13:12"
+        }
+    ]
+}

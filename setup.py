@@ -4,25 +4,31 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="wmata",
-    version="1.0.0",
-    author="Emma K Alexandra",
-    author_email="emma@emma.sh",
-    description="A simple interface to the WMATA API",
+    name="pywmataio",
+    version="0.0.1",
+    author="Raman",
+    author_email="7243222+raman325@users.noreply.github.com",
+    description="A simple async interface to the Washington, DC WMATA API",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/emma-k-alexandra/pywmata",
+    url="https://github.com/raman325/pywmataio",
     packages=setuptools.find_packages(),
-    install_requires=[
-        'requests2'
-    ],
+    install_requires=["aiohttp"],
     tests_require=[
-        'vcrpy'
+        "aioresponses",
+        "pytest",
+        "pytest-asyncio",
+        "pytest-cov",
+        "pytest-timeout",
     ],
     classifiers=[
-        "Programming Language :: Python :: 3",
+        "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
+        "Natural Language :: English",
         "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
     ],
-    python_requires='>=3.8',
+    python_requires=">=3.10",
 )

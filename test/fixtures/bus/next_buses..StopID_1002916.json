@@ -1,0 +1,29 @@
+{
+    "StopName": "16th St + Webster St",
+    "Predictions": [
+        {
+            "RouteID": "S2",
+            "DirectionText": "North to Silver Spring Station",
+            "DirectionNum": "0",
+            "Minutes": 0,
+            "VehicleID": "5528",
+            "TripID": "33841060"
+        },
+        {
+            "RouteID": "S2",
+            "DirectionText": "North to Silver Spring Station",
+            "DirectionNum": "0",
+            "Minutes": 18,
+            "VehicleID": "7330",
+            "TripID": "11610060"
+        },
+        {
+            "RouteID": "S2",
+            "DirectionText": "North to Silver Spring Station",
+            "DirectionNum": "0",
+            "Minutes": 42,
+            "VehicleID": "5523",
+            "TripID": "15152060"
+        }
+    ]
+}

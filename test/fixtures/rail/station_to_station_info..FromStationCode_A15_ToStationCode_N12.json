@@ -1,0 +1,15 @@
+{
+    "StationToStationInfos": [
+        {
+            "SourceStation": "A15",
+            "DestinationStation": "N12",
+            "CompositeMiles": 34.36,
+            "RailTime": 104,
+            "RailFare": {
+                "PeakTime": 6.0,
+                "OffPeakTime": 3.85,
+                "SeniorDisabled": 3.0
+            }
+        }
+    ]
+}

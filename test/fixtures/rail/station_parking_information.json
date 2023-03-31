@@ -1,0 +1,679 @@
+{
+    "StationsParking": [
+        {
+            "Code": "A07",
+            "Notes": null,
+            "AllDayParking": {
+                "TotalCount": 0,
+                "RiderCost": null,
+                "NonRiderCost": null,
+                "SaturdayRiderCost": null,
+                "SaturdayNonRiderCost": null
+            },
+            "ShortTermParking": {
+                "TotalCount": 17,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "A09",
+            "Notes": "Parking is available at <a href=\"https://www.montgomerycountymd.gov/DOT-Parking/bethesda/bethesda-parking-lots.html\" target=\"_blank\">Montgomery County lots and garages</a>.",
+            "AllDayParking": {
+                "TotalCount": 0,
+                "RiderCost": null,
+                "NonRiderCost": null,
+                "SaturdayRiderCost": null,
+                "SaturdayNonRiderCost": null
+            },
+            "ShortTermParking": {
+                "TotalCount": 0,
+                "Notes": null
+            }
+        },
+        {
+            "Code": "A11",
+            "Notes": "18 spaces metered for 7-hr. max. @ $1.00 per 60 mins. Parking available from 8:30 a.m. to 2 a.m.",
+            "AllDayParking": {
+                "TotalCount": 1894,
+                "RiderCost": 5.2,
+                "NonRiderCost": 5.2,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 57,
+                "Notes": "Parking available 8:30 AM - 2 AM, time limit 7 hours."
+            }
+        },
+        {
+            "Code": "A12",
+            "Notes": "Metrorail daily parking is available at the parking lot east of Rockville Pike on Marinelli Road. There is a curbside Taxi Stand on Marinelli Road outside of the Station.  Obey signage along Marinelli Road in front of the Station identifying No Stopping and No Standing areas.  Pick-up and Drop-off is permitted in the No Parking Zone along the curb immediately in front of the parking garage on Marinelli Road.",
+            "AllDayParking": {
+                "TotalCount": 1270,
+                "RiderCost": 5.2,
+                "NonRiderCost": 8.7,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 0,
+                "Notes": null
+            }
+        },
+        {
+            "Code": "A13",
+            "Notes": null,
+            "AllDayParking": {
+                "TotalCount": 1097,
+                "RiderCost": 5.2,
+                "NonRiderCost": 8.7,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 38,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "A14",
+            "Notes": "121 spaces at the Rockville meter surface lot @ $5.20 per day or $1.00 per 60 mins. 12-hr. max.",
+            "AllDayParking": {
+                "TotalCount": 524,
+                "RiderCost": 5.2,
+                "NonRiderCost": 8.95,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 22,
+                "Notes": "Parking available 5 AM - 2 AM, time limit 12 hours."
+            }
+        },
+        {
+            "Code": "A15",
+            "Notes": null,
+            "AllDayParking": {
+                "TotalCount": 5745,
+                "RiderCost": 5.2,
+                "NonRiderCost": 5.2,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 76,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "B04",
+            "Notes": "33 reserved parking spaces at $65 per month plus daily parking rate.",
+            "AllDayParking": {
+                "TotalCount": 221,
+                "RiderCost": 4.95,
+                "NonRiderCost": 10.0,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 15,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "B05",
+            "Notes": null,
+            "AllDayParking": {
+                "TotalCount": 0,
+                "RiderCost": null,
+                "NonRiderCost": null,
+                "SaturdayRiderCost": null,
+                "SaturdayNonRiderCost": null
+            },
+            "ShortTermParking": {
+                "TotalCount": 25,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "B06",
+            "Notes": null,
+            "AllDayParking": {
+                "TotalCount": 408,
+                "RiderCost": 4.7,
+                "NonRiderCost": 4.7,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 32,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "B07",
+            "Notes": "58 Kiss & Ride parking spaces available between 8:30 am - 3:30 pm and 7 pm - 2 am.  Additional spaces and costs:  88 spaces (Section D) available from 10 am - 2 am @ $1.00 per 60 mins.",
+            "AllDayParking": {
+                "TotalCount": 0,
+                "RiderCost": null,
+                "NonRiderCost": null,
+                "SaturdayRiderCost": null,
+                "SaturdayNonRiderCost": null
+            },
+            "ShortTermParking": {
+                "TotalCount": 58,
+                "Notes": "Parking available in section B between 8:30 AM - 3:30 PM and 7 PM - 2 AM, in section D between 10 AM - 2 PM."
+            }
+        },
+        {
+            "Code": "B08",
+            "Notes": "Parking is available at <a href=\"https://www.montgomerycountymd.gov/DOT-Parking/silver-spring/silver-spring-parking-lots.html\" target=\"_blank\">Montgomery County lots and garages</a>.",
+            "AllDayParking": {
+                "TotalCount": 0,
+                "RiderCost": null,
+                "NonRiderCost": null,
+                "SaturdayRiderCost": null,
+                "SaturdayNonRiderCost": null
+            },
+            "ShortTermParking": {
+                "TotalCount": 0,
+                "Notes": null
+            }
+        },
+        {
+            "Code": "B09",
+            "Notes": "13 spaces metered for 12-hr. max. @ $1.00 per 60 mins.",
+            "AllDayParking": {
+                "TotalCount": 596,
+                "RiderCost": 5.2,
+                "NonRiderCost": 5.2,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 45,
+                "Notes": "Parking available 5 AM - 2 AM, time limit 12 hours."
+            }
+        },
+        {
+            "Code": "B10",
+            "Notes": "Parking is available at <a href=\"https://www.montgomerycountymd.gov/DOT-Parking/silver-spring/silver-spring-parking-lots.html\" target=\"_blank\">Montgomery County lots and garages</a>.",
+            "AllDayParking": {
+                "TotalCount": 977,
+                "RiderCost": 4.45,
+                "NonRiderCost": 4.45,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 0,
+                "Notes": null
+            }
+        },
+        {
+            "Code": "B11",
+            "Notes": null,
+            "AllDayParking": {
+                "TotalCount": 2998,
+                "RiderCost": 5.2,
+                "NonRiderCost": 5.2,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 68,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "C12",
+            "Notes": null,
+            "AllDayParking": {
+                "TotalCount": 0,
+                "RiderCost": null,
+                "NonRiderCost": null,
+                "SaturdayRiderCost": null,
+                "SaturdayNonRiderCost": null
+            },
+            "ShortTermParking": {
+                "TotalCount": 8,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "C13",
+            "Notes": null,
+            "AllDayParking": {
+                "TotalCount": 0,
+                "RiderCost": null,
+                "NonRiderCost": null,
+                "SaturdayRiderCost": null,
+                "SaturdayNonRiderCost": null
+            },
+            "ShortTermParking": {
+                "TotalCount": 30,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "C15",
+            "Notes": "31 spaces metered for 7-hr. max @ $1.00 per 60 mins.",
+            "AllDayParking": {
+                "TotalCount": 3617,
+                "RiderCost": 4.95,
+                "NonRiderCost": 8.95,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 32,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "D09",
+            "Notes": null,
+            "AllDayParking": {
+                "TotalCount": 333,
+                "RiderCost": 4.95,
+                "NonRiderCost": 8.95,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 20,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "D10",
+            "Notes": null,
+            "AllDayParking": {
+                "TotalCount": 194,
+                "RiderCost": 4.7,
+                "NonRiderCost": 4.7,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 0,
+                "Notes": null
+            }
+        },
+        {
+            "Code": "D11",
+            "Notes": null,
+            "AllDayParking": {
+                "TotalCount": 500,
+                "RiderCost": 4.95,
+                "NonRiderCost": 4.95,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 29,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "D12",
+            "Notes": null,
+            "AllDayParking": {
+                "TotalCount": 1866,
+                "RiderCost": 3.0,
+                "NonRiderCost": 3.0,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 14,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "D13",
+            "Notes": "East - 129 short term metered spaces.  West - 20 short term metered spaces. 20 spaces metered for 12-hr. max. @ $1.00 per 60 mins. Also, there are 400 spaces at adjacent P.G. Revenue Authority garage at $85 per month.",
+            "AllDayParking": {
+                "TotalCount": 3519,
+                "RiderCost": 4.95,
+                "NonRiderCost": 8.95,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 97,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "E06",
+            "Notes": null,
+            "AllDayParking": {
+                "TotalCount": 408,
+                "RiderCost": 4.7,
+                "NonRiderCost": 4.7,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 32,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "E07",
+            "Notes": "71 spaces metered for 12-hr. max. @ $1.00 per 60 mins. Parking available 8:30 a.m. to 2 a.m",
+            "AllDayParking": {
+                "TotalCount": 453,
+                "RiderCost": 4.95,
+                "NonRiderCost": 4.95,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 80,
+                "Notes": "Parking available 8:30 AM - 2 AM, time limit 7 hours."
+            }
+        },
+        {
+            "Code": "E08",
+            "Notes": null,
+            "AllDayParking": {
+                "TotalCount": 1068,
+                "RiderCost": 4.45,
+                "NonRiderCost": 4.45,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 56,
+                "Notes": "Parking available 8:30 AM - 2 AM, time limit 7 hours."
+            }
+        },
+        {
+            "Code": "E09",
+            "Notes": "East - 42 short term meters @ $1.00 per 60 mins.  West - 21 short term meters @ $1.00 per 60 mins..  For any Non-Rider, there is a $15.00 Special Event Parking Fee at College Park-U of Md during events at Capital One at Maryland Stadium.  Metrorail riders who use the same SmarTrip\u00ae card to ride to College Park-U of Md and exit the parking facility will be charged the standard parking rates in effect upon exiting.  A qualifying Metro ride is one that begins at a station other than PG Plaza, West Hyattsville or Greenbelt. To qualify for a Metro rider rate,  you must ride to College Park using Metrorail boarding at Fort Totten or farther south. <br />The $15 rate is in effect at the time of Kick Off and remains in effect until two hours after the event. This fee ensures that a market-based parking fee is charged to patrons attending these events.",
+            "AllDayParking": {
+                "TotalCount": 1290,
+                "RiderCost": 4.95,
+                "NonRiderCost": 4.95,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 0,
+                "Notes": null
+            }
+        },
+        {
+            "Code": "E10",
+            "Notes": "West - 28 short term metered spaces.  East - 33 short term metered spaces. Oversize lot - 60 spaces. West - 104 spaces metered for 12-hr. max @ $1.00 per 60 mins. East - 33 spaces metered for 12-hr. max @ $1.00 per 60 mins.",
+            "AllDayParking": {
+                "TotalCount": 3399,
+                "RiderCost": 4.95,
+                "NonRiderCost": 8.95,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 201,
+                "Notes": "Parking available 5 AM - 2 AM, time limit 12 hours."
+            }
+        },
+        {
+            "Code": "F06",
+            "Notes": "325 spaces metered for 12-hr. max. @ $1.00 per 60 mins.",
+            "AllDayParking": {
+                "TotalCount": 808,
+                "RiderCost": 4.45,
+                "NonRiderCost": 4.45,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 15,
+                "Notes": "Parking available 5 AM - 2 AM, time limit 12 hours."
+            }
+        },
+        {
+            "Code": "F07",
+            "Notes": null,
+            "AllDayParking": {
+                "TotalCount": 0,
+                "RiderCost": null,
+                "NonRiderCost": null,
+                "SaturdayRiderCost": null,
+                "SaturdayNonRiderCost": null
+            },
+            "ShortTermParking": {
+                "TotalCount": 67,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "F08",
+            "Notes": "200 parking spaces metered for a maximum of 12 hours @ $1.00 per 60 mins. These spaces are available between 5a.m. and 2a.m. and are located in the Kiss and Ride lot on the upper level of the Southern Avenue Parking Garage.",
+            "AllDayParking": {
+                "TotalCount": 1980,
+                "RiderCost": 4.95,
+                "NonRiderCost": 4.95,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 46,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "F09",
+            "Notes": null,
+            "AllDayParking": {
+                "TotalCount": 368,
+                "RiderCost": 4.95,
+                "NonRiderCost": 4.95,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 46,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "F10",
+            "Notes": "114 spaces metered for 12-hr. max @ $1.00 per 60 mins.",
+            "AllDayParking": {
+                "TotalCount": 1890,
+                "RiderCost": 4.95,
+                "NonRiderCost": 8.95,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 61,
+                "Notes": "Parking available 5 AM - 2 AM, time limit 12 hours."
+            }
+        },
+        {
+            "Code": "F11",
+            "Notes": "38 short term meters @ $1.00 per 60 mins.  132 long term meters @ $1.00 per 60 mins.",
+            "AllDayParking": {
+                "TotalCount": 3072,
+                "RiderCost": 4.95,
+                "NonRiderCost": 8.95,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 132,
+                "Notes": "Parking available 5 AM - 2 AM, time limit 12 hours."
+            }
+        },
+        {
+            "Code": "G02",
+            "Notes": "A Park & Lock lot has opened at the corner of Southern Ave. and Banks St., NE. The daily parking fee is $4. The lot is operated by Safe Haven, Inc., and is not affiliated with Metro. Safe Haven also runs complimentary shuttle service from the lot to Capital Heights station from 5 to 10 a.m. and from the station to the lot from 3 to 7 p.m. To reach the lot from Central Ave., turn right on Southern Ave., left on Banks St. and right on 62nd St. The lot is on the right side of the street. From East Capitol St., turn left onto Southern Ave., left on Banks St. and right on 62nd St.",
+            "AllDayParking": {
+                "TotalCount": 372,
+                "RiderCost": 4.95,
+                "NonRiderCost": 4.95,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 10,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "G03",
+            "Notes": null,
+            "AllDayParking": {
+                "TotalCount": 1268,
+                "RiderCost": 4.45,
+                "NonRiderCost": 4.45,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 50,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "G04",
+            "Notes": "For any Non-Rider, there is a $15.00 Special Event Parking Fee at Morgan Blvd. and Largo Town Center during events at FedEx Field. Metrorail riders who use the same SmarTrip\u00ae card to ride to Morgan Blvd. or Largo Town Center and exit the parking facility will be charged the standard parking rates in effect upon exiting. A qualifying Metro ride is one that begins at a station other than Largo Town Center, Morgan Blvd, Addison Road, Capitol Heights, or Benning Road.<br />The $15 rate is in effect at the time of Kick Off and remains in effect until two hours after the event. This fee ensures that a market-based parking fee is charged to patrons attending these events.",
+            "AllDayParking": {
+                "TotalCount": 608,
+                "RiderCost": 4.95,
+                "NonRiderCost": 4.95,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 78,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "G05",
+            "Notes": "For any Non-Rider, there is a $15.00 Special Event Parking Fee at Morgan Blvd. and Largo Town Center during events at FedEx Field. Metrorail riders who use the same SmarTrip\u00ae card to ride to Morgan Blvd. or Largo Town Center and exit the parking facility will be charged the standard parking rates in effect upon exiting. A qualifying Metro ride is one that begins at a station other than Largo Town Center, Morgan Blvd, Addison Road, Capitol Heights, or Benning Road.<br />The $15 rate is in effect at the time of Kick Off and remains in effect until two hours after the event. This fee ensures that a market-based parking fee is charged to patrons attending these events.",
+            "AllDayParking": {
+                "TotalCount": 2200,
+                "RiderCost": 4.95,
+                "NonRiderCost": 8.95,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 141,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "J02",
+            "Notes": null,
+            "AllDayParking": {
+                "TotalCount": 361,
+                "RiderCost": 4.95,
+                "NonRiderCost": 4.95,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 46,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "J03",
+            "Notes": "97 spaces metered for 12-hr. max @ $1.00 per 60 mins.",
+            "AllDayParking": {
+                "TotalCount": 5069,
+                "RiderCost": 4.95,
+                "NonRiderCost": 8.95,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 48,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "K05",
+            "Notes": null,
+            "AllDayParking": {
+                "TotalCount": 422,
+                "RiderCost": 4.95,
+                "NonRiderCost": 4.95,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 33,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "K06",
+            "Notes": "68 spaces on access road, metered for 12-hour maximum, @ $1.00 per 60 mins.",
+            "AllDayParking": {
+                "TotalCount": 2009,
+                "RiderCost": 3.0,
+                "NonRiderCost": 3.0,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 45,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM, time limit 8 hours at West Falls Church greentops."
+            }
+        },
+        {
+            "Code": "K07",
+            "Notes": null,
+            "AllDayParking": {
+                "TotalCount": 1963,
+                "RiderCost": 4.95,
+                "NonRiderCost": 8.95,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 30,
+                "Notes": "Parking available 8:30 AM - 3:30 PM and 7 PM - 2 AM."
+            }
+        },
+        {
+            "Code": "K08",
+            "Notes": "North Kiss & Ride - 45 short term metered spaces. South Kiss & Ride - 26 short term metered spaces.  101 spaces metered for 12-hr. max @ $1.00 per 60 mins. 17 spaces metered for 7-hr. max. @ $1.00 per 60 mins. Parking available from 8:30 a.m. to 2 a.m.",
+            "AllDayParking": {
+                "TotalCount": 5169,
+                "RiderCost": 4.95,
+                "NonRiderCost": 4.95,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 71,
+                "Notes": "Parking available in section B between 8:30 AM - 3:30 PM and 7 PM - 2 AM, in section D between 10 AM - 2 PM."
+            }
+        },
+        {
+            "Code": "N06",
+            "Notes": null,
+            "AllDayParking": {
+                "TotalCount": 2300,
+                "RiderCost": 4.95,
+                "NonRiderCost": 4.95,
+                "SaturdayRiderCost": 0.0,
+                "SaturdayNonRiderCost": 0.0
+            },
+            "ShortTermParking": {
+                "TotalCount": 0,
+                "Notes": null
+            }
+        }
+    ]
+}

@@ -1,0 +1,109 @@
+{
+    "Path": [
+        {
+            "LineCode": "RD",
+            "StationCode": "A15",
+            "StationName": "Shady Grove",
+            "SeqNum": 1,
+            "DistanceToPrev": 0
+        },
+        {
+            "LineCode": "RD",
+            "StationCode": "A14",
+            "StationName": "Rockville",
+            "SeqNum": 2,
+            "DistanceToPrev": 14151
+        },
+        {
+            "LineCode": "RD",
+            "StationCode": "A13",
+            "StationName": "Twinbrook",
+            "SeqNum": 3,
+            "DistanceToPrev": 10586
+        },
+        {
+            "LineCode": "RD",
+            "StationCode": "A12",
+            "StationName": "North Bethesda",
+            "SeqNum": 4,
+            "DistanceToPrev": 5895
+        },
+        {
+            "LineCode": "RD",
+            "StationCode": "A11",
+            "StationName": "Grosvenor-Strathmore",
+            "SeqNum": 5,
+            "DistanceToPrev": 7309
+        },
+        {
+            "LineCode": "RD",
+            "StationCode": "A10",
+            "StationName": "Medical Center",
+            "SeqNum": 6,
+            "DistanceToPrev": 11821
+        },
+        {
+            "LineCode": "RD",
+            "StationCode": "A09",
+            "StationName": "Bethesda",
+            "SeqNum": 7,
+            "DistanceToPrev": 5530
+        },
+        {
+            "LineCode": "RD",
+            "StationCode": "A08",
+            "StationName": "Friendship Heights",
+            "SeqNum": 8,
+            "DistanceToPrev": 9095
+        },
+        {
+            "LineCode": "RD",
+            "StationCode": "A07",
+            "StationName": "Tenleytown-AU",
+            "SeqNum": 9,
+            "DistanceToPrev": 4135
+        },
+        {
+            "LineCode": "RD",
+            "StationCode": "A06",
+            "StationName": "Van Ness-UDC",
+            "SeqNum": 10,
+            "DistanceToPrev": 5841
+        },
+        {
+            "LineCode": "RD",
+            "StationCode": "A05",
+            "StationName": "Cleveland Park",
+            "SeqNum": 11,
+            "DistanceToPrev": 3320
+        },
+        {
+            "LineCode": "RD",
+            "StationCode": "A04",
+            "StationName": "Woodley Park-Zoo/Adams Morgan",
+            "SeqNum": 12,
+            "DistanceToPrev": 3740
+        },
+        {
+            "LineCode": "RD",
+            "StationCode": "A03",
+            "StationName": "Dupont Circle",
+            "SeqNum": 13,
+            "DistanceToPrev": 6304
+        },
+        {
+            "LineCode": "RD",
+            "StationCode": "A02",
+            "StationName": "Farragut North",
+            "SeqNum": 14,
+            "DistanceToPrev": 2487
+        },
+        {
+            "LineCode": "RD",
+            "StationCode": "A01",
+            "StationName": "Metro Center",
+            "SeqNum": 15,
+            "DistanceToPrev": 4178
+        }
+    ]
+}

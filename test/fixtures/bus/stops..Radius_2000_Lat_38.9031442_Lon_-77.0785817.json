@@ -1,0 +1,1277 @@
+{
+    "Stops": [
+        {
+            "StopID": "1001372",
+            "Name": "FOXHALL RD NW + MACARTHUR BLVD NW",
+            "Lon": -77.081483,
+            "Lat": 38.907263,
+            "Routes": [
+                "D6"
+            ]
+        },
+        {
+            "StopID": "6000757",
+            "Name": "LEE HWY + N OAK ST",
+            "Lon": -77.075074,
+            "Lat": 38.899107,
+            "Routes": [
+                "3Y"
+            ]
+        },
+        {
+            "StopID": "6000749",
+            "Name": "LEE HWY + N QUINN ST",
+            "Lon": -77.078211,
+            "Lat": 38.897798,
+            "Routes": [
+                "3Y"
+            ]
+        },
+        {
+            "StopID": "6000746",
+            "Name": "LEE HWY + N SCOTT ST",
+            "Lon": -77.080409,
+            "Lat": 38.897497,
+            "Routes": [
+                "3Y"
+            ]
+        },
+        {
+            "StopID": "6000758",
+            "Name": "LEE HWY + N NASH ST",
+            "Lon": -77.072723,
+            "Lat": 38.899175,
+            "Routes": [
+                "3Y"
+            ]
+        },
+        {
+            "StopID": "1001405",
+            "Name": "FOXHALL RD NW + P ST NW",
+            "Lon": -77.08259,
+            "Lat": 38.908777,
+            "Routes": [
+                "D6"
+            ]
+        },
+        {
+            "StopID": "6000754",
+            "Name": "LEE HWY + N NASH ST",
+            "Lon": -77.073044,
+            "Lat": 38.898333,
+            "Routes": [
+                "3Y"
+            ]
+        },
+        {
+            "StopID": "1001390",
+            "Name": "MACARTHUR BLVD NW + #4465",
+            "Lon": -77.084158,
+            "Lat": 38.908105,
+            "Routes": [
+                "D6"
+            ]
+        },
+        {
+            "StopID": "1001370",
+            "Name": "37TH ST NW + O ST NW",
+            "Lon": -77.071672,
+            "Lat": 38.907395,
+            "Routes": [
+                "G2"
+            ]
+        },
+        {
+            "StopID": "1001345",
+            "Name": "PROSPECT ST NW + 36TH ST NW",
+            "Lon": -77.069828,
+            "Lat": 38.905833,
+            "Routes": [
+                "G2"
+            ]
+        },
+        {
+            "StopID": "6000724",
+            "Name": "LEE HWY + N RHODES ST",
+            "Lon": -77.082249,
+            "Lat": 38.896295,
+            "Routes": [
+                "3Y"
+            ]
+        },
+        {
+            "StopID": "1001409",
+            "Name": "MACARTHUR BLVD NW + Q ST NW",
+            "Lon": -77.086178,
+            "Lat": 38.908906,
+            "Routes": [
+                "D6"
+            ]
+        },
+        {
+            "StopID": "1001354",
+            "Name": "35TH ST NW + N ST NW",
+            "Lon": -77.068881,
+            "Lat": 38.906649,
+            "Routes": [
+                "G2"
+            ]
+        },
+        {
+            "StopID": "1001432",
+            "Name": "Q ST NW + MACARTHUR BLVD NW",
+            "Lon": -77.085853,
+            "Lat": 38.909447,
+            "Routes": [
+                "D6",
+                "D6/"
+            ]
+        },
+        {
+            "StopID": "1001486",
+            "Name": "Q ST NW + FOXHALL RD NW",
+            "Lon": -77.08399,
+            "Lat": 38.910558,
+            "Routes": [
+                "D6",
+                "D6/"
+            ]
+        },
+        {
+            "StopID": "6000712",
+            "Name": "N NASH ST + WILSON BLVD",
+            "Lon": -77.073093,
+            "Lat": 38.895601,
+            "Routes": [
+                "38B",
+                "4B"
+            ]
+        },
+        {
+            "StopID": "6001346",
+            "Name": "N MOORE ST + ROSSLYN STATION BUS BAY E",
+            "Lon": -77.071627,
+            "Lat": 38.896099,
+            "Routes": [
+                "38B"
+            ]
+        },
+        {
+            "StopID": "6000702",
+            "Name": "WILSON BLVD + N OAK ST",
+            "Lon": -77.074652,
+            "Lat": 38.894792,
+            "Routes": [
+                "38B",
+                "4B"
+            ]
+        },
+        {
+            "StopID": "1001315",
+            "Name": "M ST NW + 34TH ST NW",
+            "Lon": -77.067381,
+            "Lat": 38.904992,
+            "Routes": [
+                "38B"
+            ]
+        },
+        {
+            "StopID": "1001408",
+            "Name": "MACARTHUR BLVD NW + Q ST NW",
+            "Lon": -77.087194,
+            "Lat": 38.909109,
+            "Routes": [
+                "D6",
+                "D6/"
+            ]
+        },
+        {
+            "StopID": "6001386",
+            "Name": "WILSON BLVD + N QUINN ST",
+            "Lon": -77.078626,
+            "Lat": 38.894013,
+            "Routes": [
+                "38B",
+                "4B"
+            ]
+        },
+        {
+            "StopID": "6000718",
+            "Name": "LEE HWY + N VEITCH ST",
+            "Lon": -77.085932,
+            "Lat": 38.895981,
+            "Routes": [
+                "3Y"
+            ]
+        },
+        {
+            "StopID": "6001347",
+            "Name": "N MOORE ST + WILSON BLVD",
+            "Lon": -77.071617,
+            "Lat": 38.895682,
+            "Routes": [
+                "4B"
+            ]
+        },
+        {
+            "StopID": "1001523",
+            "Name": "FOXHALL RD NW + BETWEEN GREENWICH & Q ST",
+            "Lon": -77.084451,
+            "Lat": 38.911288,
+            "Routes": [
+                "D6"
+            ]
+        },
+        {
+            "StopID": "1001398",
+            "Name": "P ST NW + 35TH ST NW",
+            "Lon": -77.068904,
+            "Lat": 38.908794,
+            "Routes": [
+                "G2"
+            ]
+        },
+        {
+            "StopID": "1001385",
+            "Name": "O ST NW + 34TH ST NW",
+            "Lon": -77.067972,
+            "Lat": 38.907701,
+            "Routes": [
+                "G2"
+            ]
+        },
+        {
+            "StopID": "1001562",
+            "Name": "RESERVOIR RD NW + FRENCH EMBASSY",
+            "Lon": -77.078407,
+            "Lat": 38.91263,
+            "Routes": [
+                "D6",
+                "D6/"
+            ]
+        },
+        {
+            "StopID": "1001560",
+            "Name": "RESERVOIR RD NW + GEORGETOWN MEDICAL SCHOOL",
+            "Lon": -77.076933,
+            "Lat": 38.912596,
+            "Routes": [
+                "D6",
+                "D6/"
+            ]
+        },
+        {
+            "StopID": "1001563",
+            "Name": "RESERVOIR RD NW + FRENCH EMBASSY",
+            "Lon": -77.078222,
+            "Lat": 38.912762,
+            "Routes": [
+                "D6"
+            ]
+        },
+        {
+            "StopID": "6000716",
+            "Name": "LEE HWY + N VANCE ST",
+            "Lon": -77.086889,
+            "Lat": 38.896003,
+            "Routes": [
+                "3Y"
+            ]
+        },
+        {
+            "StopID": "1001529",
+            "Name": "FOXHALL RD NW + GREENWICH PKY NW",
+            "Lon": -77.08449,
+            "Lat": 38.911619,
+            "Routes": [
+                "D6",
+                "D6/"
+            ]
+        },
+        {
+            "StopID": "1001553",
+            "Name": "RESERVOIR RD NW + 44TH ST NW",
+            "Lon": -77.081148,
+            "Lat": 38.912602,
+            "Routes": [
+                "D6",
+                "D6/"
+            ]
+        },
+        {
+            "StopID": "1001555",
+            "Name": "RESERVOIR RD NW + GEORGETOWN MEDICAL SCHOOL",
+            "Lon": -77.076532,
+            "Lat": 38.912711,
+            "Routes": [
+                "D6"
+            ]
+        },
+        {
+            "StopID": "6000688",
+            "Name": "CLARENDON BLVD + N ODE ST",
+            "Lon": -77.07538,
+            "Lat": 38.893602,
+            "Routes": [
+                "38B",
+                "4B"
+            ]
+        },
+        {
+            "StopID": "1001551",
+            "Name": "RESERVOIR RD NW + G.U. ENTR",
+            "Lon": -77.074537,
+            "Lat": 38.912542,
+            "Routes": [
+                "D6",
+                "D6/"
+            ]
+        },
+        {
+            "StopID": "1001552",
+            "Name": "RESERVOIR RD NW + 38TH ST NW",
+            "Lon": -77.074594,
+            "Lat": 38.912664,
+            "Routes": [
+                "D6"
+            ]
+        },
+        {
+            "StopID": "1001569",
+            "Name": "RESERVOIR RD NW + HOBAN RD NW",
+            "Lon": -77.082375,
+            "Lat": 38.912773,
+            "Routes": [
+                "D6"
+            ]
+        },
+        {
+            "StopID": "1003205",
+            "Name": "M ST NW + 33RD ST NW",
+            "Lon": -77.065862,
+            "Lat": 38.905208,
+            "Routes": [
+                "38B"
+            ]
+        },
+        {
+            "StopID": "6000682",
+            "Name": "WILSON BLVD + N RHODES ST",
+            "Lon": -77.080679,
+            "Lat": 38.893163,
+            "Routes": [
+                "38B",
+                "4B"
+            ]
+        },
+        {
+            "StopID": "1001318",
+            "Name": "M ST NW + POTOMAC ST NW",
+            "Lon": -77.06547,
+            "Lat": 38.905036,
+            "Routes": [
+                "38B"
+            ]
+        },
+        {
+            "StopID": "6000677",
+            "Name": "CLARENDON BLVD + N RHODES ST",
+            "Lon": -77.079497,
+            "Lat": 38.892764,
+            "Routes": [
+                "38B",
+                "4B"
+            ]
+        },
+        {
+            "StopID": "1001474",
+            "Name": "MACARTHUR BLVD NW + ELLIOTT PL NW",
+            "Lon": -77.088661,
+            "Lat": 38.910117,
+            "Routes": [
+                "D6"
+            ]
+        },
+        {
+            "StopID": "1001554",
+            "Name": "RESERVOIR RD NW + 37TH ST NW",
+            "Lon": -77.072468,
+            "Lat": 38.912664,
+            "Routes": [
+                "D6"
+            ]
+        },
+        {
+            "StopID": "1001497",
+            "Name": "Q ST NW + 35TH ST NW",
+            "Lon": -77.068951,
+            "Lat": 38.910758,
+            "Routes": [
+                "D2",
+                "D2*1",
+                "D6"
+            ]
+        },
+        {
+            "StopID": "6000708",
+            "Name": "LEE HWY + N ADAMS ST",
+            "Lon": -77.0882,
+            "Lat": 38.895342,
+            "Routes": [
+                "3Y"
+            ]
+        },
+        {
+            "StopID": "1001477",
+            "Name": "MACARTHUR BLVD NW + ELLIOTT PL NW",
+            "Lon": -77.08901,
+            "Lat": 38.910314,
+            "Routes": [
+                "D6",
+                "D6/"
+            ]
+        },
+        {
+            "StopID": "1001531",
+            "Name": "35TH ST NW + DENT PL NW",
+            "Lon": -77.069288,
+            "Lat": 38.911579,
+            "Routes": [
+                "D2",
+                "D6",
+                "D6/"
+            ]
+        },
+        {
+            "StopID": "1001491",
+            "Name": "Q ST NW + 34TH ST NW",
+            "Lon": -77.06798,
+            "Lat": 38.910677,
+            "Routes": [
+                "D2",
+                "D6",
+                "D6/"
+            ]
+        },
+        {
+            "StopID": "6000666",
+            "Name": "CLARENDON BLVD + N SCOTT ST",
+            "Lon": -77.080985,
+            "Lat": 38.891953,
+            "Routes": [
+                "38B",
+                "4B"
+            ]
+        },
+        {
+            "StopID": "6001326",
+            "Name": "LEE HWY + N ADAMS ST",
+            "Lon": -77.089264,
+            "Lat": 38.895417,
+            "Routes": [
+                "3Y"
+            ]
+        },
+        {
+            "StopID": "1001401",
+            "Name": "P ST NW + 33RD ST NW",
+            "Lon": -77.065912,
+            "Lat": 38.908847,
+            "Routes": [
+                "G2"
+            ]
+        },
+        {
+            "StopID": "1001556",
+            "Name": "RESERVOIR RD NW + 35TH ST NW",
+            "Lon": -77.069723,
+            "Lat": 38.912725,
+            "Routes": [
+                "D6"
+            ]
+        },
+        {
+            "StopID": "6000667",
+            "Name": "WILSON BLVD + N COURTHOUSE RD",
+            "Lon": -77.083803,
+            "Lat": 38.891891,
+            "Routes": [
+                "38B",
+                "4B"
+            ]
+        },
+        {
+            "StopID": "1003200",
+            "Name": "35TH ST NW + RESERVOIR RD NW",
+            "Lon": -77.069333,
+            "Lat": 38.912813,
+            "Routes": [
+                "D2"
+            ]
+        },
+        {
+            "StopID": "1003204",
+            "Name": "M ST NW + WISCONSIN AVE NW",
+            "Lon": -77.063214,
+            "Lat": 38.905262,
+            "Routes": [
+                "38B"
+            ]
+        },
+        {
+            "StopID": "1001575",
+            "Name": "35TH ST NW + RESERVOIR RD NW",
+            "Lon": -77.069186,
+            "Lat": 38.912883,
+            "Routes": [
+                "D2",
+                "D2*1",
+                "D51"
+            ]
+        },
+        {
+            "StopID": "6000661",
+            "Name": "CLARENDON BLVD + N COURTHOUSE RD",
+            "Lon": -77.083596,
+            "Lat": 38.89146,
+            "Routes": [
+                "38B",
+                "4B"
+            ]
+        },
+        {
+            "StopID": "1001373",
+            "Name": "WISCONSIN AVE NW + DUMBARTON ST NW",
+            "Lon": -77.063366,
+            "Lat": 38.907274,
+            "Routes": [
+                "31",
+                "33",
+                "33*1",
+                "33*5"
+            ]
+        },
+        {
+            "StopID": "1001493",
+            "Name": "Q ST NW + 33RD ST NW",
+            "Lon": -77.06583,
+            "Lat": 38.910834,
+            "Routes": [
+                "D2",
+                "D2*1",
+                "D6"
+            ]
+        },
+        {
+            "StopID": "1001426",
+            "Name": "WISCONSIN AVE NW + P ST NW",
+            "Lon": -77.064468,
+            "Lat": 38.909362,
+            "Routes": [
+                "31",
+                "33",
+                "33*1",
+                "33*5"
+            ]
+        },
+        {
+            "StopID": "1001406",
+            "Name": "WISCONSIN AVE NW + P ST NW",
+            "Lon": -77.064125,
+            "Lat": 38.90907,
+            "Routes": [
+                "31",
+                "33",
+                "33*1",
+                "33*5",
+                "D51"
+            ]
+        },
+        {
+            "StopID": "1001355",
+            "Name": "WISCONSIN AVE NW + N ST NW",
+            "Lon": -77.062877,
+            "Lat": 38.906708,
+            "Routes": [
+                "31",
+                "33",
+                "33*1",
+                "33*5",
+                "D51"
+            ]
+        },
+        {
+            "StopID": "1001379",
+            "Name": "DUMBARTON ST NW + WISCONSIN AVE NW",
+            "Lon": -77.063119,
+            "Lat": 38.90757,
+            "Routes": [
+                "G2"
+            ]
+        },
+        {
+            "StopID": "1001319",
+            "Name": "M ST NW + WISCONSIN AVE NW",
+            "Lon": -77.062296,
+            "Lat": 38.905093,
+            "Routes": [
+                "31",
+                "33",
+                "33*1",
+                "33*5",
+                "38B"
+            ]
+        },
+        {
+            "StopID": "1001500",
+            "Name": "Q ST NW + WISCONSIN AVE NW",
+            "Lon": -77.06528,
+            "Lat": 38.910719,
+            "Routes": [
+                "D2",
+                "D6",
+                "D6/"
+            ]
+        },
+        {
+            "StopID": "6000658",
+            "Name": "CLARENDON BLVD + N UHLE ST",
+            "Lon": -77.085037,
+            "Lat": 38.891314,
+            "Routes": [
+                "38B",
+                "4B"
+            ]
+        },
+        {
+            "StopID": "6000659",
+            "Name": "WILSON BLVD + N VEITCH ST",
+            "Lon": -77.085579,
+            "Lat": 38.891443,
+            "Routes": [
+                "38B",
+                "4B"
+            ]
+        },
+        {
+            "StopID": "1001415",
+            "Name": "P ST NW + WISCONSIN AVE NW",
+            "Lon": -77.064006,
+            "Lat": 38.909308,
+            "Routes": [
+                "G2"
+            ]
+        },
+        {
+            "StopID": "1001512",
+            "Name": "WISCONSIN AVE NW + Q ST NW",
+            "Lon": -77.065299,
+            "Lat": 38.910932,
+            "Routes": [
+                "31",
+                "33",
+                "33*1",
+                "33*5"
+            ]
+        },
+        {
+            "StopID": "6000701",
+            "Name": "LEE HWY + N CLEVELAND ST",
+            "Lon": -77.091397,
+            "Lat": 38.894691,
+            "Routes": [
+                "3Y"
+            ]
+        },
+        {
+            "StopID": "1001475",
+            "Name": "Q ST NW + WISCONSIN AVE NW",
+            "Lon": -77.06465,
+            "Lat": 38.910465,
+            "Routes": [
+                "D2",
+                "D2*1",
+                "D6"
+            ]
+        },
+        {
+            "StopID": "1001496",
+            "Name": "WISCONSIN AVE NW + Q ST NW",
+            "Lon": -77.065186,
+            "Lat": 38.911051,
+            "Routes": [
+                "31",
+                "33",
+                "33*1",
+                "33*5"
+            ]
+        },
+        {
+            "StopID": "1001630",
+            "Name": "T ST NW + 37TH ST NW",
+            "Lon": -77.072631,
+            "Lat": 38.915458,
+            "Routes": [
+                "D2",
+                "D2*1"
+            ]
+        },
+        {
+            "StopID": "6000705",
+            "Name": "LEE HWY + N CALVERT ST",
+            "Lon": -77.091913,
+            "Lat": 38.894962,
+            "Routes": [
+                "3Y"
+            ]
+        },
+        {
+            "StopID": "1001323",
+            "Name": "M ST NW + 31ST ST NW",
+            "Lon": -77.061622,
+            "Lat": 38.905285,
+            "Routes": [
+                "31",
+                "33",
+                "33*1",
+                "33*5",
+                "38B"
+            ]
+        },
+        {
+            "StopID": "1001573",
+            "Name": "MACARTHUR BLVD NW + 47TH PL NW",
+            "Lon": -77.090962,
+            "Lat": 38.912671,
+            "Routes": [
+                "D6"
+            ]
+        },
+        {
+            "StopID": "1001614",
+            "Name": "35TH ST NW + S ST NW",
+            "Lon": -77.06926,
+            "Lat": 38.914746,
+            "Routes": [
+                "D2",
+                "D2*1"
+            ]
+        },
+        {
+            "StopID": "1001572",
+            "Name": "MACARTHUR BLVD NW + 47TH PL NW",
+            "Lon": -77.091296,
+            "Lat": 38.912773,
+            "Routes": [
+                "D6",
+                "D6/"
+            ]
+        },
+        {
+            "StopID": "1001595",
+            "Name": "WISCONSIN AVE NW + R ST NW",
+            "Lon": -77.066863,
+            "Lat": 38.91386,
+            "Routes": [
+                "31",
+                "33",
+                "33*1",
+                "33*5"
+            ]
+        },
+        {
+            "StopID": "1001633",
+            "Name": "T ST NW + 35TH ST NW",
+            "Lon": -77.069867,
+            "Lat": 38.915517,
+            "Routes": [
+                "D2",
+                "D2*1"
+            ]
+        },
+        {
+            "StopID": "1001664",
+            "Name": "37TH ST NW + WHITEHAVEN PKY NW",
+            "Lon": -77.072929,
+            "Lat": 38.916646,
+            "Routes": [
+                "D2"
+            ]
+        },
+        {
+            "StopID": "6000651",
+            "Name": "CLARENDON BLVD + N WAYNE ST",
+            "Lon": -77.086461,
+            "Lat": 38.890315,
+            "Routes": [
+                "38B",
+                "4B"
+            ]
+        },
+        {
+            "StopID": "1001593",
+            "Name": "WISCONSIN AVE NW + R ST NW",
+            "Lon": -77.066755,
+            "Lat": 38.914033,
+            "Routes": [
+                "31",
+                "33",
+                "33*1",
+                "33*5"
+            ]
+        },
+        {
+            "StopID": "1001321",
+            "Name": "M ST NW + THOMAS JEFFERSON ST NW",
+            "Lon": -77.060407,
+            "Lat": 38.905124,
+            "Routes": [
+                "31",
+                "33",
+                "33*1",
+                "33*5",
+                "38B"
+            ]
+        },
+        {
+            "StopID": "1001638",
+            "Name": "35TH ST NW + T ST NW",
+            "Lon": -77.069441,
+            "Lat": 38.915643,
+            "Routes": [
+                "D2"
+            ]
+        },
+        {
+            "StopID": "1001479",
+            "Name": "Q ST NW + 31ST ST NW",
+            "Lon": -77.062348,
+            "Lat": 38.910532,
+            "Routes": [
+                "D2",
+                "D2*1",
+                "D6"
+            ]
+        },
+        {
+            "StopID": "6000652",
+            "Name": "WILSON BLVD + N BARTON ST",
+            "Lon": -77.088316,
+            "Lat": 38.890613,
+            "Routes": [
+                "38B"
+            ]
+        },
+        {
+            "StopID": "6000707",
+            "Name": "LEE HWY + N HIGHLAND ST",
+            "Lon": -77.094547,
+            "Lat": 38.895248,
+            "Routes": [
+                "3Y"
+            ]
+        },
+        {
+            "StopID": "1001693",
+            "Name": "37TH ST NW + U ST NW",
+            "Lon": -77.072818,
+            "Lat": 38.917262,
+            "Routes": [
+                "D2",
+                "D2*1"
+            ]
+        },
+        {
+            "StopID": "1001417",
+            "Name": "P ST NW + 31ST ST NW",
+            "Lon": -77.061284,
+            "Lat": 38.909351,
+            "Routes": [
+                "G2"
+            ]
+        },
+        {
+            "StopID": "1001322",
+            "Name": "M ST NW + 30TH ST NW",
+            "Lon": -77.05961,
+            "Lat": 38.905313,
+            "Routes": [
+                "31",
+                "33",
+                "33*1",
+                "33*5",
+                "38B"
+            ]
+        },
+        {
+            "StopID": "6000706",
+            "Name": "LEE HWY + N HIGHLAND ST",
+            "Lon": -77.094854,
+            "Lat": 38.895032,
+            "Routes": [
+                "3Y"
+            ]
+        },
+        {
+            "StopID": "1001489",
+            "Name": "Q ST NW + 31ST ST NW",
+            "Lon": -77.061642,
+            "Lat": 38.910435,
+            "Routes": [
+                "D2",
+                "D6",
+                "D6/"
+            ]
+        },
+        {
+            "StopID": "1001637",
+            "Name": "WISCONSIN AVE NW + 34TH ST NW",
+            "Lon": -77.067603,
+            "Lat": 38.915616,
+            "Routes": [
+                "31",
+                "33",
+                "33*1",
+                "33*5"
+            ]
+        },
+        {
+            "StopID": "1001645",
+            "Name": "WISCONSIN AVE NW + 34TH ST NW",
+            "Lon": -77.06802,
+            "Lat": 38.915892,
+            "Routes": [
+                "31",
+                "33",
+                "33*1",
+                "33*5"
+            ]
+        },
+        {
+            "StopID": "6000641",
+            "Name": "N BARTON ST + CLARENDON BLVD",
+            "Lon": -77.088669,
+            "Lat": 38.889738,
+            "Routes": [
+                "4B"
+            ]
+        },
+        {
+            "StopID": "1001381",
+            "Name": "DUMBARTON ST NW + 30TH ST NW",
+            "Lon": -77.059336,
+            "Lat": 38.907603,
+            "Routes": [
+                "G2"
+            ]
+        },
+        {
+            "StopID": "6000640",
+            "Name": "N BARTON ST + CLARENDON BLVD",
+            "Lon": -77.088436,
+            "Lat": 38.889476,
+            "Routes": [
+                "4B"
+            ]
+        },
+        {
+            "StopID": "6000639",
+            "Name": "CLARENDON BLVD + N BARTON ST",
+            "Lon": -77.088785,
+            "Lat": 38.889409,
+            "Routes": [
+                "38B"
+            ]
+        },
+        {
+            "StopID": "1001699",
+            "Name": "WISCONSIN AVE NW + 35TH ST NW",
+            "Lon": -77.069174,
+            "Lat": 38.917326,
+            "Routes": [
+                "31",
+                "33",
+                "33*1",
+                "33*5"
+            ]
+        },
+        {
+            "StopID": "1001616",
+            "Name": "MACARTHUR BLVD NW + RESERVOIR RD NW",
+            "Lon": -77.09281,
+            "Lat": 38.914653,
+            "Routes": [
+                "D6"
+            ]
+        },
+        {
+            "StopID": "1001719",
+            "Name": "37TH ST NW + MANOR PL NW",
+            "Lon": -77.073003,
+            "Lat": 38.918517,
+            "Routes": [
+                "D2"
+            ]
+        },
+        {
+            "StopID": "1001615",
+            "Name": "MACARTHUR BLVD NW + RESERVOIR RD NW",
+            "Lon": -77.093089,
+            "Lat": 38.9147,
+            "Routes": [
+                "D6",
+                "D6/"
+            ]
+        },
+        {
+            "StopID": "6000719",
+            "Name": "RT 29 LEE HWY + SPOUT RUN PKWY",
+            "Lon": -77.097319,
+            "Lat": 38.89612,
+            "Routes": [
+                "3Y"
+            ]
+        },
+        {
+            "StopID": "6000643",
+            "Name": "WILSON BLVD + N DANVILLE ST",
+            "Lon": -77.090475,
+            "Lat": 38.889792,
+            "Routes": [
+                "38B"
+            ]
+        },
+        {
+            "StopID": "1001419",
+            "Name": "P ST NW + 30TH ST NW",
+            "Lon": -77.059098,
+            "Lat": 38.909379,
+            "Routes": [
+                "G2"
+            ]
+        },
+        {
+            "StopID": "6000715",
+            "Name": "RT 29 LEE HWY + SPOUT RUN PKWY",
+            "Lon": -77.09747,
+            "Lat": 38.895842,
+            "Routes": [
+                "3Y"
+            ]
+        },
+        {
+            "StopID": "1001706",
+            "Name": "WISCONSIN AVE NW + 35TH ST NW",
+            "Lon": -77.069396,
+            "Lat": 38.917921,
+            "Routes": [
+                "31",
+                "33",
+                "33*1",
+                "33*5"
+            ]
+        },
+        {
+            "StopID": "1001482",
+            "Name": "Q ST NW + 30TH ST NW",
+            "Lon": -77.059599,
+            "Lat": 38.91057,
+            "Routes": [
+                "D2",
+                "D2*1",
+                "D6"
+            ]
+        },
+        {
+            "StopID": "1001729",
+            "Name": "37TH ST NW + TUNLAW RD NW",
+            "Lon": -77.072899,
+            "Lat": 38.919077,
+            "Routes": [
+                "D2",
+                "D2*1"
+            ]
+        },
+        {
+            "StopID": "6000628",
+            "Name": "N BARTON ST + FAIRFAX DR",
+            "Lon": -77.088477,
+            "Lat": 38.888182,
+            "Routes": [
+                "4B"
+            ]
+        },
+        {
+            "StopID": "1001492",
+            "Name": "Q ST NW + 30TH ST NW",
+            "Lon": -77.058961,
+            "Lat": 38.910479,
+            "Routes": [
+                "D2",
+                "D6",
+                "D6/"
+            ]
+        },
+        {
+            "StopID": "1001316",
+            "Name": "PENNSYLVANIA AVE NW + 28TH ST NW",
+            "Lon": -77.05683,
+            "Lat": 38.904789,
+            "Routes": [
+                "31",
+                "33",
+                "33*1",
+                "33*5",
+                "38B"
+            ]
+        },
+        {
+            "StopID": "1003227",
+            "Name": "PENNSYLVANIA AVE NW + 28TH ST NW",
+            "Lon": -77.056691,
+            "Lat": 38.904907,
+            "Routes": [
+                "31",
+                "33",
+                "33*1",
+                "33*5",
+                "38B"
+            ]
+        },
+        {
+            "StopID": "1001750",
+            "Name": "TUNLAW RD NW + 37TH ST NW",
+            "Lon": -77.073194,
+            "Lat": 38.919783,
+            "Routes": [
+                "D2"
+            ]
+        },
+        {
+            "StopID": "1001420",
+            "Name": "P ST NW + 29TH ST NW",
+            "Lon": -77.057996,
+            "Lat": 38.909407,
+            "Routes": [
+                "G2"
+            ]
+        },
+        {
+            "StopID": "1001389",
+            "Name": "28TH ST NW + DUMBARTON ST NW",
+            "Lon": -77.056995,
+            "Lat": 38.907989,
+            "Routes": [
+                "G2"
+            ]
+        },
+        {
+            "StopID": "6000613",
+            "Name": "N BARTON ST + FAIRFAX DR",
+            "Lon": -77.088183,
+            "Lat": 38.887338,
+            "Routes": [
+                "4B"
+            ]
+        },
+        {
+            "StopID": "1001775",
+            "Name": "BENTON ST NW + 39TH ST NW",
+            "Lon": -77.076667,
+            "Lat": 38.920636,
+            "Routes": [
+                "D2"
+            ]
+        },
+        {
+            "StopID": "6000828",
+            "Name": "CLARENDON BLVD + N EDGEWOOD ST",
+            "Lon": -77.091082,
+            "Lat": 38.888513,
+            "Routes": [
+                "38B"
+            ]
+        },
+        {
+            "StopID": "1001772",
+            "Name": "BENTON ST NW + 40TH ST NW",
+            "Lon": -77.078627,
+            "Lat": 38.920743,
+            "Routes": [
+                "D2",
+                "D2*1"
+            ]
+        },
+        {
+            "StopID": "1003199",
+            "Name": "BENTON ST NW + 39TH ST NW",
+            "Lon": -77.076953,
+            "Lat": 38.920738,
+            "Routes": [
+                "D2",
+                "D2*1"
+            ]
+        },
+        {
+            "StopID": "1001751",
+            "Name": "WISCONSIN AVE NW + HALL PL NW",
+            "Lon": -77.071247,
+            "Lat": 38.920064,
+            "Routes": [
+                "31",
+                "33",
+                "33*1",
+                "33*5"
+            ]
+        },
+        {
+            "StopID": "1001412",
+            "Name": "28TH ST NW + P ST NW",
+            "Lon": -77.057012,
+            "Lat": 38.90926,
+            "Routes": [
+                "G2"
+            ]
+        },
+        {
+            "StopID": "1001769",
+            "Name": "BENTON ST NW + OBSERVATORY PL NW",
+            "Lon": -77.074541,
+            "Lat": 38.920743,
+            "Routes": [
+                "D2",
+                "D2*1"
+            ]
+        },
+        {
+            "StopID": "1001773",
+            "Name": "BENTON ST NW + TUNLAW RD NW",
+            "Lon": -77.073797,
+            "Lat": 38.92063,
+            "Routes": [
+                "D2"
+            ]
+        },
+        {
+            "StopID": "1001755",
+            "Name": "WISCONSIN AVE NW + HALL PL NW",
+            "Lon": -77.071607,
+            "Lat": 38.920206,
+            "Routes": [
+                "31",
+                "33",
+                "33*1",
+                "33*5"
+            ]
+        },
+        {
+            "StopID": "1001421",
+            "Name": "P ST NW + 28TH ST NW",
+            "Lon": -77.056951,
+            "Lat": 38.909424,
+            "Routes": [
+                "G2"
+            ]
+        }
+    ]
+}

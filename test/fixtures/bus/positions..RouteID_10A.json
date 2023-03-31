@@ -1,0 +1,64 @@
+{
+    "BusPositions": [
+        {
+            "VehicleID": "2937",
+            "Lat": 38.8697079625623,
+            "Lon": -77.05266202729324,
+            "Deviation": 4.0,
+            "DateTime": "2023-03-31T22:17:21",
+            "TripID": "5732060",
+            "RouteID": "10A",
+            "DirectionNum": 0,
+            "DirectionText": "NORTH",
+            "TripHeadsign": "PENTAGON",
+            "TripStartTime": "2023-03-31T21:25:00",
+            "TripEndTime": "2023-03-31T22:06:00",
+            "BlockNumber": "FJ-26"
+        },
+        {
+            "VehicleID": "3160",
+            "Lat": 38.79506683349609,
+            "Lon": -77.07524871826172,
+            "Deviation": 1.0,
+            "DateTime": "2023-03-31T22:17:19",
+            "TripID": "38228060",
+            "RouteID": "10A",
+            "DirectionNum": 1,
+            "DirectionText": "SOUTH",
+            "TripHeadsign": "HUNTINGTON",
+            "TripStartTime": "2023-03-31T21:30:00",
+            "TripEndTime": "2023-03-31T22:16:00",
+            "BlockNumber": "FJ-29"
+        },
+        {
+            "VehicleID": "2934",
+            "Lat": 38.81606674194336,
+            "Lon": -77.05679931640626,
+            "Deviation": 5.0,
+            "DateTime": "2023-03-31T22:17:24",
+            "TripID": "46951060",
+            "RouteID": "10A",
+            "DirectionNum": 0,
+            "DirectionText": "NORTH",
+            "TripHeadsign": "PENTAGON",
+            "TripStartTime": "2023-03-31T21:55:00",
+            "TripEndTime": "2023-03-31T22:36:00",
+            "BlockNumber": "FJ-28"
+        },
+        {
+            "VehicleID": "2947",
+            "Lat": 38.86190032958984,
+            "Lon": -77.06352996826172,
+            "Deviation": 10.0,
+            "DateTime": "2023-03-31T22:17:19",
+            "TripID": "8805060",
+            "RouteID": "10A",
+            "DirectionNum": 1,
+            "DirectionText": "SOUTH",
+            "TripHeadsign": "HUNTINGTON",
+            "TripStartTime": "2023-03-31T22:00:00",
+            "TripEndTime": "2023-03-31T22:46:00",
+            "BlockNumber": "FJ-30"
+        }
+    ]
+}

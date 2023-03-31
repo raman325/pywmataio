@@ -1,0 +1,19 @@
+{
+    "ElevatorIncidents": [
+        {
+            "UnitName": "A01W01",
+            "UnitType": "ESCALATOR",
+            "UnitStatus": null,
+            "StationCode": "A01",
+            "StationName": "Metro Center, G and 13th St Entrance",
+            "LocationDescription": "Escalator between street and mezzanine",
+            "SymptomCode": null,
+            "TimeOutOfService": "0427",
+            "SymptomDescription": "Modernization",
+            "DisplayOrder": 0.0,
+            "DateOutOfServ": "2023-01-04T04:27:00",
+            "DateUpdated": "2023-02-22T14:17:05",
+            "EstimatedReturnToService": "2023-05-05T23:59:59"
+        }
+    ]
+}

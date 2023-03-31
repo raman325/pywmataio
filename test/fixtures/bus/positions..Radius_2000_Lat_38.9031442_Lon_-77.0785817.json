@@ -1,0 +1,49 @@
+{
+    "BusPositions": [
+        {
+            "VehicleID": "3751",
+            "Lat": 38.92068632258926,
+            "Lon": -77.07714914721112,
+            "Deviation": 3.0,
+            "DateTime": "2023-03-31T22:17:25",
+            "TripID": "41525060",
+            "RouteID": "D2",
+            "DirectionNum": 1,
+            "DirectionText": "WEST",
+            "TripHeadsign": "GLOVER PARK",
+            "TripStartTime": "2023-03-31T22:00:00",
+            "TripEndTime": "2023-03-31T22:16:00",
+            "BlockNumber": "WC-06"
+        },
+        {
+            "VehicleID": "4647",
+            "Lat": 38.91072082519531,
+            "Lon": -77.0679946899414,
+            "Deviation": 2.0,
+            "DateTime": "2023-03-31T22:17:27",
+            "TripID": "13162060",
+            "RouteID": "D6",
+            "DirectionNum": 0,
+            "DirectionText": "EAST",
+            "TripHeadsign": "STADIUM-ARMORY",
+            "TripStartTime": "2023-03-31T22:00:00",
+            "TripEndTime": "2023-03-31T23:05:00",
+            "BlockNumber": "PD-46"
+        },
+        {
+            "VehicleID": "3320",
+            "Lat": 38.89567947387695,
+            "Lon": -77.071533203125,
+            "Deviation": 2.0,
+            "DateTime": "2023-03-31T22:16:58",
+            "TripID": "34445060",
+            "RouteID": "4B",
+            "DirectionNum": 1,
+            "DirectionText": "WEST",
+            "TripHeadsign": "SEVEN CORNERS",
+            "TripStartTime": "2023-03-31T22:15:00",
+            "TripEndTime": "2023-03-31T22:44:00",
+            "BlockNumber": "F-406"
+        }
+    ]
+}
