@@ -4,26 +4,28 @@ WMATA is an easy to use Python interface to the [Washington Metropolitan Area Tr
 
 ## Contents
 
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Getting Started](#getting-started)
-  - [Design](#design)
-  - [Using `MetroRail`](#using-MetroRail)
-  - [Using `MetroBus`](#using-MetroBus)
-- [Testing](#testing)
-- [Dependencies](#dependencies)
-- [Contact](#contact)
-- [License](#license)
+- [WMATA](#wmata)
+  - [Contents](#contents)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Getting Started](#getting-started)
+    - [Design](#design)
+      - [`MetroRail`](#metrorail)
+        - [Using `MetroRail`](#using-metrorail)
+      - [`MetroBus`](#metrobus)
+        - [Using `MetroBus`](#using-metrobus)
+  - [Credits](#credits)
+  - [License](#license)
 
 ## Requirements
 
-- Python 3.8
+- Python 3.10
 
 ## Installation
 
 ```bash
-pip install wmata
+pip install wmataio
 ```
 
 ## Usage
@@ -74,33 +76,11 @@ client = MetroBus(api_key)
 routes = client.routes()
 ```
 
-## Testing
-
-Run
-
-```bash
-python setup.py test
-```
-
-Tests use VCRpy to avoid network requests.
 
 
+## Credits
 
-## Dependencies
-
-- Requests
-  
-  
-
-### Dev Dependencies
-
-- VCRpy
-
-
-
-## Contact
-
-Feel free to email questions and comments to [emma@emma.sh](mailto:emma@emma.sh)
+Thanks to @emma-k-alexandra for [pywmata](https://github.com/emma-k-alexandra/pywmata) which I used as the base for this repo.
 
 
 
