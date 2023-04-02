@@ -48,6 +48,15 @@ class Station:
     station_together_code_1: str | None = field(init=False)
     station_together_code_2: str | None = field(init=False)
 
+    def __repr__(self) -> str:
+        """Return the representation."""
+        cls_name = type(self).__name__
+        return f"{cls_name}(code={self.station_code}, name={self.name})"
+
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash(self.station_code)
+
     def __post_init__(self) -> None:
         """Post init."""
         self.address = Address(self.data["Address"])
