@@ -12,7 +12,7 @@ from aiohttp import ClientSession, client_exceptions
 
 from .bus import MetroBus
 from .bus.const import BusEndpoint
-from .const import ADDITIONAL_PATH_HEADER, CLASS_HEADER, ENUM_HEADER
+from .const import ADDITIONAL_PATH_HEADER, CLASS_HEADER, ENUM_HEADER, WMATAEndpoint
 from .exceptions import WMATAError
 from .rail import MetroRail
 from .rail.const import RailEndpoint
@@ -38,7 +38,9 @@ class Client:
         self._headers = {"api_key": self.api_key}
 
     def _get_headers(
-        self, enum_: BusEndpoint | RailEndpoint, additional_path: str | None = None
+        self,
+        enum_: BusEndpoint | RailEndpoint | WMATAEndpoint,
+        additional_path: str | None = None,
     ) -> dict[str, Any]:
         """Get headers."""
         headers = self._headers
@@ -53,7 +55,7 @@ class Client:
 
     async def fetch(
         self,
-        enum_: BusEndpoint | RailEndpoint,
+        enum_: BusEndpoint | RailEndpoint | WMATAEndpoint,
         params: dict[str, Any] | None = None,
         additional_path: str | None = None,
     ) -> dict:
