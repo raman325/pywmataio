@@ -30,7 +30,6 @@ class NextBus:
     direction_text: str = field(init=False)
     minutes: int = field(init=False)
     route_id: str = field(init=False)
-    route: "Route" = field(init=False)
     trip_id: str = field(init=False)
     vehicle_id: str = field(init=False)
 
@@ -40,6 +39,10 @@ class NextBus:
         self.direction_text = self.data["DirectionText"]
         self.minutes = self.data["Minutes"]
         self.route_id = self.data["RouteID"]
-        self.route = self.bus.routes[self.route_id]
         self.trip_id = self.data["TripID"]
         self.vehicle_id = self.data["VehicleID"]
+
+    @property
+    def route(self) -> "Route":
+        """Return the route."""
+        return self.bus.routes[self.route_id]

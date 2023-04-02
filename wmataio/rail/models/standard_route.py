@@ -10,8 +10,8 @@ if TYPE_CHECKING:
     from .station import Station
 
 
-class TrackCircuitData(TypedDict):
-    """Track circuit data for MetroRail WMATA API."""
+class StandardRoutesTrackCircuitData(TypedDict):
+    """Standard routes track circuit data for MetroRail WMATA API."""
 
     CircuitId: int
     SeqNum: int
@@ -19,11 +19,11 @@ class TrackCircuitData(TypedDict):
 
 
 @dataclass
-class TrackCircuit:
-    """Track circuit."""
+class StandardRoutesTrackCircuit:
+    """Standard routes rack circuit."""
 
     bus: "MetroRail"
-    data: TrackCircuitData
+    data: StandardRoutesTrackCircuitData
     circuit_id: int = field(init=False)
     sequence_number: int = field(init=False)
     station_code: str | None = field(init=False)
@@ -46,7 +46,7 @@ class StandardRouteData(TypedDict):
     """Standard route data for MetroRail WMATA API."""
 
     LineCode: str
-    TrackCircuits: list[TrackCircuitData]
+    TrackCircuits: list[StandardRoutesTrackCircuitData]
     TrackNum: Literal[1, 2]
 
 
@@ -57,7 +57,7 @@ class StandardRoute:
     bus: "MetroRail"
     data: StandardRouteData
     line_code: str = field(init=False)
-    track_circuits: list[TrackCircuit] = field(init=False)
+    track_circuits: list[StandardRoutesTrackCircuit] = field(init=False)
     track_number: Literal[1, 2] = field(init=False)
 
     def __post_init__(self) -> None:
@@ -65,7 +65,7 @@ class StandardRoute:
         self.line_code = self.data["LineCode"]
         self.track_circuits = sorted(
             [
-                TrackCircuit(self.bus, track_circuit_data)
+                StandardRoutesTrackCircuit(self.bus, track_circuit_data)
                 for track_circuit_data in self.data["TrackCircuits"]
             ],
             key=lambda track_circuit: track_circuit.sequence_number,

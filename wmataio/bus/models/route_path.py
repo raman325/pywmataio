@@ -53,7 +53,7 @@ class PathDirection:
     direction_num: int
     direction: str = field(init=False)
     shapes: list[ShapePoint] = field(init=False)
-    stops: list["Stop"] = field(init=False)
+    stops_data: list["StopData"] = field(init=False)
     trip_headsign: str = field(init=False)
 
     def __post_init__(self) -> None:
@@ -63,11 +63,13 @@ class PathDirection:
             [ShapePoint(shape_data) for shape_data in self.data["Shape"]],
             key=lambda shape: shape.sequence_number,
         )
-        self.stops = [
-            self.bus.get_stop_from_stop_data(stop_data)
-            for stop_data in self.data["Stops"]
-        ]
+        self.stops_data = self.data["Stops"]
         self.trip_headsign = self.data["TripHeadsign"]
+
+    @property
+    def stops(self) -> list["Stop"]:
+        """Return the stops."""
+        return [self.bus.stops[stop_data["StopID"]] for stop_data in self.stops_data]
 
 
 class RoutePathData(TypedDict):
@@ -86,16 +88,19 @@ class RoutePath:
     bus: "MetroBus"
     data: RoutePathData
     route_id: str = field(init=False)
-    route: "Route" = field(init=False)
     name: str = field(init=False)
     directions: dict[int, PathDirection] = field(init=False, default_factory=dict)
 
     def __post_init__(self) -> None:
         """Post init."""
         self.route_id = self.data["RouteID"]
-        self.route = self.bus.routes[self.route_id]
         self.name = self.data["Name"]
         if (direction_data := self.data["Direction0"]) is not None:
             self.directions[0] = PathDirection(self.bus, direction_data, 0)
         if (direction_data := self.data["Direction1"]) is not None:
             self.directions[1] = PathDirection(self.bus, direction_data, 1)
+
+    @property
+    def route(self) -> list["Route"]:
+        """Return the route."""
+        return self.bus.routes[self.route_id]

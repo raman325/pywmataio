@@ -70,6 +70,7 @@ class DirectionSchedule:
     route_id: str = field(init=False)
     route: Route = field(init=False)
     start_time: datetime = field(init=False)
+    stop_times_data: list[StopTimeData] = field(init=False)
     stop_times: list[StopTime] = field(init=False)
     trip_direction: str = field(init=False)
     trip_headsign: str = field(init=False)
@@ -83,10 +84,11 @@ class DirectionSchedule:
         self.start_time = datetime.fromisoformat(self.data["StartTime"]).replace(
             tzinfo=TZ
         )
+        self.stop_times_data = self.data["StopTimes"]
         self.stop_times = sorted(
             [
                 StopTime(self.bus, stop_time_data)
-                for stop_time_data in self.data["StopTimes"]
+                for stop_time_data in self.stop_times_data
             ],
             key=lambda stop_time: stop_time.stop_sequence,
         )
