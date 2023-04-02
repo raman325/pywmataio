@@ -35,6 +35,15 @@ class Line:
     internal_destination_code_2: str | None = field(init=False, default=None)
     line_code: str = field(init=False)
 
+    def __repr__(self) -> str:
+        """Return the representation."""
+        cls_name = type(self).__name__
+        return f"{cls_name}(code={self.line_code}, name={self.display_name})"
+
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash(self.line_code)
+
     def __post_init__(self) -> None:
         """Post init."""
         self.line_code = self.data["LineCode"]
