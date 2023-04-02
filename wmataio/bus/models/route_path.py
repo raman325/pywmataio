@@ -69,7 +69,9 @@ class PathDirection:
     @property
     def stops(self) -> list["Stop"]:
         """Return the stops."""
-        return [self.bus.stops[stop_data["StopID"]] for stop_data in self.stops_data]
+        return [
+            self.bus.get_stop_from_stop_data(stop_data) for stop_data in self.stops_data
+        ]
 
 
 class RoutePathData(TypedDict):
@@ -101,6 +103,6 @@ class RoutePath:
             self.directions[1] = PathDirection(self.bus, direction_data, 1)
 
     @property
-    def route(self) -> list["Route"]:
+    def route(self) -> "Route":
         """Return the route."""
         return self.bus.routes[self.route_id]
