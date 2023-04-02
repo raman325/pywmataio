@@ -1,6 +1,6 @@
 # wmataio
 
-`wmataio` is an easy to use Python interface to the [Washington Metropolitan Area Transit Authority API](https://developer.wmata.com).
+`wmataio` is an easy to use Python interface to the [Washington Metropolitan Area Transit Authority API](https://developer.wmata.com) (Washington, DC Public Transit).
 
 ## Contents
 

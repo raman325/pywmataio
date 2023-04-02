@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.0.1",
     author="Raman",
     author_email="7243222+raman325@users.noreply.github.com",
-    description="A simple async interface to the Washington, DC WMATA API",
+    description="A simple async interface to the WMATA (Washington, DC Public Transit) API",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/raman325/pywmataio",
