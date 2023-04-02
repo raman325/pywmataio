@@ -26,6 +26,7 @@ async def test_rail_apis(aioresponses):
     assert line.internal_destination_code_2 is None
     assert line.internal_destination_2 is None
     assert str(line) == "Line(code=BL, name=Blue)"
+    assert hash(line) == hash("BL")
 
     assert len(line.standard_routes) == 2
     standard_route = line.standard_routes[0]
@@ -60,6 +61,7 @@ async def test_rail_apis(aioresponses):
     assert len(station.station_times) == 1
     assert station.parking is None
     assert str(station) == "Station(code=A01, name=Metro Center)"
+    assert hash(station) == hash("A01")
 
     entrance = station.entrances[0]
     assert entrance.entrance_id == "273"
