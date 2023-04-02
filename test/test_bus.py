@@ -19,6 +19,7 @@ async def test_bus_apis(aioresponses):
     assert route.route_id == "10A"
     assert route.name == "10A - HUNTINGTON STA - PENTAGON"
     assert route.line_description == "Alexandria-Pentagon Line"
+    assert str(route) == "Route(id=10A, name=10A - HUNTINGTON STA - PENTAGON)"
 
     assert len(client.bus.stops) == 9360
 
@@ -28,6 +29,7 @@ async def test_bus_apis(aioresponses):
     assert stop.name == "ST BARNABAS RD + LIME ST"
     assert stop.route_ids == ["D12", "D12*5"]
     assert stop.routes == [client.bus.routes["D12"], client.bus.routes["D12*5"]]
+    assert str(stop) == "Stop(code=3000454, name=ST BARNABAS RD + LIME ST)"
 
     positions = await client.bus.get_live_positions(route=client.bus.routes["10A"])
     assert positions
