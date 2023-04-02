@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pywmataio",
-    version="0.0.6",
+    version="0.0.7",
     author="Raman",
     author_email="7243222+raman325@users.noreply.github.com",
     description="A simple async interface to the WMATA (Washington, DC Public Transit) API",
