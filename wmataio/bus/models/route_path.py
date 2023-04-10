@@ -24,7 +24,7 @@ class ShapePointData(TypedDict):
 class ShapePoint:
     """ShapePoint for a Path."""
 
-    data: ShapePointData
+    data: ShapePointData = field(repr=False)
     coordinates: Coordinates = field(init=False)
     sequence_number: int = field(init=False)
 
@@ -32,6 +32,10 @@ class ShapePoint:
         """Post init."""
         self.coordinates = Coordinates(float(self.data["Lat"]), float(self.data["Lon"]))
         self.sequence_number = int(self.data["SeqNum"])
+
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash((self.coordinates, self.sequence_number))
 
 
 class PathDirectionData(TypedDict):
@@ -45,15 +49,15 @@ class PathDirectionData(TypedDict):
 
 
 @dataclass
-class PathDirection:
+class RoutePathDirection:
     """Direction for a Path."""
 
-    bus: "MetroBus"
-    data: PathDirectionData
+    route_path: RoutePath
+    data: PathDirectionData = field(repr=False)
     direction_num: int
     direction: str = field(init=False)
-    shapes: list[ShapePoint] = field(init=False)
-    stops_data: list["StopData"] = field(init=False)
+    shapes: list[ShapePoint] = field(init=False, repr=False)
+    stops_data: list["StopData"] = field(init=False, repr=False)
     trip_headsign: str = field(init=False)
 
     def __post_init__(self) -> None:
@@ -66,11 +70,16 @@ class PathDirection:
         self.stops_data = self.data["Stops"]
         self.trip_headsign = self.data["TripHeadsign"]
 
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash((self.route_path, self.direction_num))
+
     @property
     def stops(self) -> list["Stop"]:
         """Return the stops."""
         return [
-            self.bus.get_stop_from_stop_data(stop_data) for stop_data in self.stops_data
+            self.route_path.bus.get_stop_from_stop_data(stop_data)
+            for stop_data in self.stops_data
         ]
 
 
@@ -87,20 +96,26 @@ class RoutePathData(TypedDict):
 class RoutePath:
     """Path for a MetroBus."""
 
-    bus: "MetroBus"
-    data: RoutePathData
+    bus: "MetroBus" = field(repr=False)
+    data: RoutePathData = field(repr=False)
     route_id: str = field(init=False)
     name: str = field(init=False)
-    directions: dict[int, PathDirection] = field(init=False, default_factory=dict)
+    path_directions: dict[int, RoutePathDirection] = field(
+        init=False, default_factory=dict, repr=False
+    )
 
     def __post_init__(self) -> None:
         """Post init."""
         self.route_id = self.data["RouteID"]
         self.name = self.data["Name"]
         if (direction_data := self.data["Direction0"]) is not None:
-            self.directions[0] = PathDirection(self.bus, direction_data, 0)
+            self.path_directions[0] = RoutePathDirection(self, direction_data, 0)
         if (direction_data := self.data["Direction1"]) is not None:
-            self.directions[1] = PathDirection(self.bus, direction_data, 1)
+            self.path_directions[1] = RoutePathDirection(self, direction_data, 1)
+
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash(self.route)
 
     @property
     def route(self) -> "Route":

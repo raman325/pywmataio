@@ -31,8 +31,8 @@ class RailIncidentData(TypedDict):
 class RailIncident:
     """MetroRail Incident."""
 
-    bus: "MetroRail"
-    data: RailIncidentData
+    rail: "MetroRail" = field(repr=False)
+    data: RailIncidentData = field(repr=False)
     date_updated: datetime = field(init=False)
     description: str = field(init=False)
     incident_id: str = field(init=False)
@@ -53,7 +53,11 @@ class RailIncident:
             if line_code.strip()
         ]
 
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash(self.incident_id)
+
     @property
     def lines_affected(self) -> list["Line"]:
         """Lines affected."""
-        return [self.bus.lines[line_code] for line_code in self.line_codes_affected]
+        return [self.rail.lines[line_code] for line_code in self.line_codes_affected]

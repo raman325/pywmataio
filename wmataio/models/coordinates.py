@@ -11,3 +11,7 @@ class Coordinates:
         """Initialize."""
         self.latitude = latitude
         self.longitude = longitude
+
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash((self.latitude, self.longitude))

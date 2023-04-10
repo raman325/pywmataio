@@ -34,8 +34,8 @@ class ElevatorAndEscalatorIncidentData(TypedDict):
 class ElevatorAndEscalatorIncident:
     """MetroRail Elevator/Escalator Incident."""
 
-    bus: "MetroRail"
-    data: ElevatorAndEscalatorIncidentData
+    rail: "MetroRail" = field(repr=False)
+    data: ElevatorAndEscalatorIncidentData = field(repr=False)
     date_out_of_service: datetime = field(init=False)
     date_updated: datetime = field(init=False)
     estimated_return_to_service: datetime | None = field(init=False, default=None)
@@ -65,7 +65,19 @@ class ElevatorAndEscalatorIncident:
         self.unit_name = self.data["UnitName"]
         self.unit_type = self.data["UnitType"]
 
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash(
+            (
+                self.station,
+                self.date_out_of_service,
+                self.symptom_description,
+                self.unit_name,
+                self.unit_type,
+            )
+        )
+
     @property
     def station(self) -> "Station":
         """Return the station."""
-        return self.bus.stations[self.station_code]
+        return self.rail.stations[self.station_code]

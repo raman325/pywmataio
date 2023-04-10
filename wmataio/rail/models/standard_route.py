@@ -22,8 +22,8 @@ class StandardRoutesTrackCircuitData(TypedDict):
 class StandardRoutesTrackCircuit:
     """Standard routes rack circuit."""
 
-    bus: "MetroRail"
-    data: StandardRoutesTrackCircuitData
+    standard_route: StandardRoute
+    data: StandardRoutesTrackCircuitData = field(repr=False)
     circuit_id: int = field(init=False)
     sequence_number: int = field(init=False)
     station_code: str | None = field(init=False)
@@ -34,12 +34,18 @@ class StandardRoutesTrackCircuit:
         self.sequence_number = self.data["SeqNum"]
         self.station_code = self.data["StationCode"]
 
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash(
+            (self.circuit_id, self.sequence_number, self.station, self.standard_route)
+        )
+
     @property
     def station(self) -> "Station" | None:
         """Station."""
         if self.station_code is None:
             return None
-        return self.bus.stations[self.station_code]
+        return self.standard_route.rail.stations[self.station_code]
 
 
 class StandardRouteData(TypedDict):
@@ -54,8 +60,8 @@ class StandardRouteData(TypedDict):
 class StandardRoute:
     """Standard route."""
 
-    bus: "MetroRail"
-    data: StandardRouteData
+    rail: "MetroRail" = field(repr=False)
+    data: StandardRouteData = field(repr=False)
     line_code: str = field(init=False)
     track_circuits: list[StandardRoutesTrackCircuit] = field(init=False)
     track_number: Literal[1, 2] = field(init=False)
@@ -65,14 +71,18 @@ class StandardRoute:
         self.line_code = self.data["LineCode"]
         self.track_circuits = sorted(
             [
-                StandardRoutesTrackCircuit(self.bus, track_circuit_data)
+                StandardRoutesTrackCircuit(self, track_circuit_data)
                 for track_circuit_data in self.data["TrackCircuits"]
             ],
             key=lambda track_circuit: track_circuit.sequence_number,
         )
         self.track_number = self.data["TrackNum"]
 
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash((self.line, self.track_number))
+
     @property
     def line(self) -> "Line":
         """Return line for route."""
-        return self.bus.lines[self.line_code]
+        return self.rail.lines[self.line_code]

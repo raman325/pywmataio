@@ -16,8 +16,9 @@ class TrackCircuitNeighborData(TypedDict):
 class TrackCircuitNeighbor:
     """Track circuit neighbor."""
 
-    all_track_circuits: dict[int, TrackCircuit]
-    data: TrackCircuitNeighborData
+    track_circuit: TrackCircuit
+    all_track_circuits: dict[int, TrackCircuit] = field(repr=False)
+    data: TrackCircuitNeighborData = field(repr=False)
     circuit_ids: list[int] = field(init=False)
     neighbor_type: Literal["Left", "Right"] = field(init=False)
 
@@ -30,6 +31,10 @@ class TrackCircuitNeighbor:
     def circuits(self) -> list[TrackCircuit]:
         """Circuits."""
         return [self.all_track_circuits[circuit_id] for circuit_id in self.circuit_ids]
+
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash((self.neighbor_type, self.track_circuit, tuple(self.circuits)))
 
 
 class TrackCircuitData(TypedDict):
@@ -44,8 +49,8 @@ class TrackCircuitData(TypedDict):
 class TrackCircuit:
     """Track circuit."""
 
-    all_track_circuits: dict[int, TrackCircuit]
-    data: TrackCircuitData
+    all_track_circuits: dict[int, TrackCircuit] = field(repr=False)
+    data: TrackCircuitData = field(repr=False)
     circuit_id: int = field(init=False)
     neighbors: list[TrackCircuitNeighbor] = field(init=False)
     track: int = field(init=False)
@@ -54,7 +59,11 @@ class TrackCircuit:
         """Post init."""
         self.circuit_id = self.data["CircuitId"]
         self.neighbors = [
-            TrackCircuitNeighbor(self.all_track_circuits, neighbor)
+            TrackCircuitNeighbor(self, self.all_track_circuits, neighbor)
             for neighbor in self.data["Neighbors"]
         ]
         self.track = self.data["Track"]
+
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash((self.circuit_id, self.track))

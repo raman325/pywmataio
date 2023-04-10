@@ -27,8 +27,8 @@ class StationEntranceData(TypedDict):
 class StationEntrance:
     """Station entrance information for MetroRail WMATA API."""
 
-    bus: "MetroRail"
-    data: StationEntranceData
+    rail: "MetroRail" = field(repr=False)
+    data: StationEntranceData = field(repr=False)
     description: str = field(init=False)
     entrance_id: str = field(init=False)
     coordinates: Coordinates = field(init=False)
@@ -45,12 +45,16 @@ class StationEntrance:
         self.station_code_1 = self.data["StationCode1"]
         self.station_code_2 = self.data["StationCode2"]
 
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash(self.entrance_id)
+
     @property
     def station_1(self) -> "Station":
         """Return the station 1."""
-        return self.bus.stations[self.station_code_1]
+        return self.rail.stations[self.station_code_1]
 
     @property
     def station_2(self) -> "Station":
         """Return the station 2."""
-        return self.bus.stations[self.station_code_2]
+        return self.rail.stations[self.station_code_2]

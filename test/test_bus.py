@@ -4,6 +4,7 @@ from datetime import date, datetime
 from wmataio.client import Client
 from wmataio.const import TZ
 from wmataio.models.area import Area
+from wmataio.bus.util import find_direct_route_start_end_stop_pairs
 
 
 async def test_bus_apis(aioresponses):
@@ -19,7 +20,6 @@ async def test_bus_apis(aioresponses):
     assert route.route_id == "10A"
     assert route.name == "10A - HUNTINGTON STA - PENTAGON"
     assert route.line_description == "Alexandria-Pentagon Line"
-    assert str(route) == "Route(id=10A, name=10A - HUNTINGTON STA - PENTAGON)"
     assert hash(route) == hash("10A")
 
     assert len(client.bus.stops) == 9360
@@ -29,8 +29,7 @@ async def test_bus_apis(aioresponses):
     assert stop.coordinates.longitude == -76.957391
     assert stop.name == "ST BARNABAS RD + LIME ST"
     assert stop.route_ids == ["D12", "D12*5"]
-    assert stop.routes == [client.bus.routes["D12"], client.bus.routes["D12*5"]]
-    assert str(stop) == "Stop(code=3000454, name=ST BARNABAS RD + LIME ST)"
+    assert stop.routes == {client.bus.routes["D12"], client.bus.routes["D12*5"]}
     assert hash(stop) == hash("3000454")
 
     positions = await client.bus.get_live_positions(route=client.bus.routes["10A"])
@@ -87,9 +86,9 @@ async def test_bus_apis(aioresponses):
     assert route_path.route_id == "10A"
     assert route_path.route == client.bus.routes["10A"]
     assert route_path.name == "10A - PENTAGON - HUNTINGTON STA"
-    assert len(route_path.directions) == 2
-    assert route_path.directions[1]
-    direction = route_path.directions[0]
+    assert len(route_path.path_directions) == 2
+    assert route_path.path_directions[1]
+    direction = route_path.path_directions[0]
     assert direction.trip_headsign == "PENTAGON"
     assert direction.direction == "NORTH"
     assert direction.direction_num == 0
@@ -105,7 +104,7 @@ async def test_bus_apis(aioresponses):
     assert stop.coordinates.latitude == 38.79524
     assert stop.coordinates.longitude == -77.075059
     assert stop.route_ids == ["10A"]
-    assert stop.routes == [client.bus.routes["10A"]]
+    assert stop.routes == {client.bus.routes["10A"]}
 
     route_schedule = await client.bus.get_route_schedule(
         route=client.bus.routes["10A"], date_=date(2023, 3, 31)
@@ -166,3 +165,19 @@ async def test_bus_apis(aioresponses):
     assert stop_arrival.schedule_time == datetime(2023, 3, 31, 4, 53, 28, tzinfo=TZ)
     assert stop_arrival.start_time == datetime(2023, 3, 31, 4, 47, tzinfo=TZ)
     assert stop_arrival.end_time == datetime(2023, 3, 31, 5, 24, tzinfo=TZ)
+
+
+async def test_bus_utils(aioresponses):
+    """Tests for MetroBus utility functions."""
+    client = Client("", test_mode=True)
+    await client.bus.load_data()
+    stop_1 = client.bus.stops["5002201"]
+    stop_2 = client.bus.stops["4000025"]
+    data = await find_direct_route_start_end_stop_pairs(
+        client, {stop_1, stop_2}, {stop_1, stop_2}
+    )
+    assert len(data) == 1
+    assert len(data[(stop_1, stop_2)]) == 1
+    assert next(direction for direction in data[(stop_1, stop_2)]).direction == "NORTH"
+
+    assert (stop_2, stop_1) not in data

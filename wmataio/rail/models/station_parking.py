@@ -20,7 +20,8 @@ class ShortTermParkingData(TypedDict):
 class ShortTermParking:
     """Short-term parking information for MetroRail WMATA API."""
 
-    data: ShortTermParkingData
+    station_parking: StationParking
+    data: ShortTermParkingData = field(repr=False)
     total_count: int = field(init=False)
     notes: str | None = field(init=False)
 
@@ -28,6 +29,10 @@ class ShortTermParking:
         """Post init."""
         self.total_count = self.data["TotalCount"]
         self.notes = self.data["Notes"] if self.data["Notes"] else None
+
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash(self.station_parking)
 
 
 class AllDayParkingData(TypedDict):
@@ -44,7 +49,8 @@ class AllDayParkingData(TypedDict):
 class AllDayParking:
     """All-day parking information for MetroRail WMATA API."""
 
-    data: AllDayParkingData
+    station_parking: StationParking
+    data: AllDayParkingData = field(repr=False)
     total_count: int = field(init=False)
     rider_cost: float | None = field(init=False, default=None)
     non_rider_cost: float | None = field(init=False, default=None)
@@ -64,6 +70,10 @@ class AllDayParking:
         if saturday_non_rider_cost := self.data["SaturdayNonRiderCost"]:
             self.saturday_non_rider_cost = float(saturday_non_rider_cost)
 
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash(self.station_parking)
+
 
 class StationParkingData(TypedDict):
     """Station parking data for MetroRail WMATA API."""
@@ -78,8 +88,8 @@ class StationParkingData(TypedDict):
 class StationParking:
     """Station parking information for MetroRail WMATA API."""
 
-    bus: "MetroRail"
-    data: StationParkingData
+    rail: "MetroRail" = field(repr=False)
+    data: StationParkingData = field(repr=False)
     code: str = field(init=False)
     notes: str | None = field(init=False)
     short_term_parking: ShortTermParking = field(init=False)
@@ -89,10 +99,14 @@ class StationParking:
         """Post init."""
         self.code = self.data["Code"]
         self.notes = self.data["Notes"] if self.data["Notes"] else None
-        self.short_term_parking = ShortTermParking(self.data["ShortTermParking"])
-        self.all_day_parking = AllDayParking(self.data["AllDayParking"])
+        self.short_term_parking = ShortTermParking(self, self.data["ShortTermParking"])
+        self.all_day_parking = AllDayParking(self, self.data["AllDayParking"])
+
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash((self.station, self.code))
 
     @property
     def station(self) -> "Station":
         """Return the station."""
-        return self.bus.stations[self.code]
+        return self.rail.stations[self.code]

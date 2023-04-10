@@ -25,20 +25,15 @@ class LineData(TypedDict):
 class Line:
     """MetroRail Line."""
 
-    bus: "MetroRail"
-    data: LineData
-    standard_routes: list["StandardRoute"]
+    rail: "MetroRail" = field(repr=False)
+    data: LineData = field(repr=False)
+    standard_routes: list["StandardRoute"] = field(repr=False)
     display_name: str = field(init=False)
     start_station_code: str = field(init=False)
     end_station_code: str = field(init=False)
     internal_destination_code_1: str | None = field(init=False, default=None)
     internal_destination_code_2: str | None = field(init=False, default=None)
     line_code: str = field(init=False)
-
-    def __repr__(self) -> str:
-        """Return the representation."""
-        cls_name = type(self).__name__
-        return f"{cls_name}(code={self.line_code}, name={self.display_name})"
 
     def __hash__(self) -> int:
         """Return the hash."""
@@ -58,23 +53,23 @@ class Line:
     @property
     def start_station(self) -> "Station":
         """Return the start station."""
-        return self.bus.stations[self.start_station_code]
+        return self.rail.stations[self.start_station_code]
 
     @property
     def end_station(self) -> "Station":
         """Return the end station."""
-        return self.bus.stations[self.end_station_code]
+        return self.rail.stations[self.end_station_code]
 
     @property
     def internal_destination_1(self) -> "Station" | None:
         """Return the internal destination 1."""
         if not self.internal_destination_code_1:
             return None
-        return self.bus.stations[self.internal_destination_code_1]
+        return self.rail.stations[self.internal_destination_code_1]
 
     @property
     def internal_destination_2(self) -> "Station" | None:
         """Return the internal destination 2."""
         if not self.internal_destination_code_2:
             return None
-        return self.bus.stations[self.internal_destination_code_2]
+        return self.rail.stations[self.internal_destination_code_2]

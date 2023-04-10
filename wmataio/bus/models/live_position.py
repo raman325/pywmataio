@@ -35,8 +35,8 @@ class LiveBusPositionData(TypedDict):
 class LiveBusPosition:
     """A MetroBus Bus LiveBusPosition."""
 
-    bus: "MetroBus"
-    data: LiveBusPositionData
+    bus: "MetroBus" = field(repr=False)
+    data: LiveBusPositionData = field(repr=False)
     last_update: datetime = field(init=False)
     deviation: float = field(init=False)
     direction_text: str = field(init=False)
@@ -66,6 +66,10 @@ class LiveBusPosition:
             self.data["TripStartTime"]
         ).replace(tzinfo=TZ)
         self.vehicle_id = self.data["VehicleID"]
+
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash((self.vehicle_id, self.trip_id))
 
     @property
     def route(self) -> "Route":

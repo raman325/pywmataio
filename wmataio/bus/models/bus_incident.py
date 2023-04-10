@@ -26,8 +26,8 @@ class BusIncidentData(TypedDict):
 class BusIncident:
     """MetroBus Incident."""
 
-    bus: "MetroBus"
-    data: BusIncidentData
+    bus: "MetroBus" = field(repr=False)
+    data: BusIncidentData = field(repr=False)
     date_updated: datetime = field(init=False)
     description: str = field(init=False)
     incident_id: str = field(init=False)
@@ -43,6 +43,10 @@ class BusIncident:
         self.incident_type = self.data["IncidentType"]
         self.incident_id = self.data["IncidentID"]
         self.route_ids_affected = self.data["RoutesAffected"]
+
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash(self.incident_id)
 
     @property
     def routes_affected(self) -> list["Route"]:

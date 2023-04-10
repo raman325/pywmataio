@@ -30,9 +30,9 @@ class StopArrivalData(TypedDict):
 class StopArrival:
     """Stop Arrival for a Route Schedule."""
 
-    bus: "MetroBus"
+    bus: "MetroBus" = field(repr=False)
     stop: "Stop"
-    data: StopArrivalData
+    data: StopArrivalData = field(repr=False)
     direction_number: int = field(init=False)
     end_time: datetime = field(init=False)
     route_id: str = field(init=False)
@@ -56,6 +56,10 @@ class StopArrival:
         self.trip_direction_text = self.data["TripDirectionText"]
         self.trip_headsign = self.data["TripHeadsign"]
         self.trip_id = self.data["TripID"]
+
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash((self.stop, self.direction_number, self.route))
 
     @property
     def route(self) -> "Route":

@@ -24,8 +24,8 @@ class PathItemData(TypedDict):
 class PathItem:
     """MetroRail Path Item."""
 
-    bus: "MetroRail"
-    data: PathItemData
+    station_to_station: StationToStation
+    data: PathItemData = field(repr=False)
     distance_to_previous: int = field(init=False)
     line_code: str = field(init=False)
     sequence_number: int = field(init=False)
@@ -40,15 +40,19 @@ class PathItem:
         self.station_code = self.data["StationCode"]
         self.station_name = self.data["StationName"]
 
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash(self.station_to_station)
+
     @property
     def line(self) -> "Line":
         """Return the line."""
-        return self.bus.lines[self.line_code]
+        return self.station_to_station.rail.lines[self.line_code]
 
     @property
     def station(self) -> "Station":
         """Return the station."""
-        return self.bus.stations[self.station_code]
+        return self.station_to_station.rail.stations[self.station_code]
 
 
 class StationToStationPathData(TypedDict):
@@ -69,7 +73,8 @@ class RailFareData(TypedDict):
 class RailFare:
     """MetroRail Rail Fare."""
 
-    data: RailFareData
+    station_to_station_information: StationToStationInformation
+    data: RailFareData = field(repr=False)
     off_peak_time: float = field(init=False)
     peak_time: float = field(init=False)
     senior_disabled: float = field(init=False)
@@ -79,6 +84,10 @@ class RailFare:
         self.off_peak_time = float(self.data["OffPeakTime"])
         self.peak_time = float(self.data["PeakTime"])
         self.senior_disabled = float(self.data["SeniorDisabled"])
+
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash(self.station_to_station_information)
 
 
 class StationToStationInfoData(TypedDict):
@@ -95,8 +104,8 @@ class StationToStationInfoData(TypedDict):
 class StationToStationInformation:
     """MetroRail Station to Station Info."""
 
-    bus: "MetroRail"
-    data: StationToStationInfoData
+    station_to_station: StationToStation
+    data: StationToStationInfoData = field(repr=False)
     composite_miles: float = field(init=False)
     destination_station_code: str = field(init=False)
     rail_fare: RailFare = field(init=False)
@@ -107,19 +116,23 @@ class StationToStationInformation:
         """Post init."""
         self.composite_miles = float(self.data["CompositeMiles"])
         self.destination_station_code = self.data["DestinationStation"]
-        self.rail_fare = RailFare(self.data["RailFare"])
+        self.rail_fare = RailFare(self, self.data["RailFare"])
         self.rail_time = self.data["RailTime"]
         self.source_station_code = self.data["SourceStation"]
+
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash(self.station_to_station)
 
     @property
     def destination_station(self) -> "Station":
         """Return the destination station."""
-        return self.bus.stations[self.destination_station_code]
+        return self.station_to_station.rail.stations[self.destination_station_code]
 
     @property
     def source_station(self) -> "Station":
         """Return the source station."""
-        return self.bus.stations[self.source_station_code]
+        return self.station_to_station.rail.stations[self.source_station_code]
 
 
 class StationToStationData(TypedDict):
@@ -133,19 +146,25 @@ class StationToStationData(TypedDict):
 class StationToStation:
     """MetroRail Station to Station."""
 
-    bus: "MetroRail"
-    path_data: StationToStationPathData
-    info_data: list[StationToStationInfoData]
+    rail: "MetroRail" = field(repr=False)
+    from_station: "Station"
+    to_station: "Station"
+    path_data: StationToStationPathData = field(repr=False)
+    info_data: list[StationToStationInfoData] = field(repr=False)
     path: list[PathItem] = field(init=False)
     info: list[StationToStationInformation] = field(init=False)
 
     def __post_init__(self) -> None:
         """Post init."""
         self.path = sorted(
-            [PathItem(self.bus, item_data) for item_data in self.path_data["Path"]],
+            [PathItem(self, item_data) for item_data in self.path_data["Path"]],
             key=lambda item: item.sequence_number,
         )
         self.info = [
-            StationToStationInformation(self.bus, station_info_data)
+            StationToStationInformation(self, station_info_data)
             for station_info_data in self.info_data
         ]
+
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash((self.from_station, self.to_station))
