@@ -18,7 +18,7 @@ class AddressData(TypedDict):
 class Address:
     """MetroRail Station Address."""
 
-    data: AddressData
+    data: AddressData = field(repr=False)
     street: str = field(init=False)
     city: str = field(init=False)
     state: str = field(init=False)
@@ -30,3 +30,7 @@ class Address:
         self.city = self.data["City"]
         self.state = self.data["State"]
         self.zip_code = self.data["Zip"]
+
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash((self.street, self.city, self.state, self.zip_code))

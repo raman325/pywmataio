@@ -43,15 +43,14 @@ class Client:
         additional_path: str | None = None,
     ) -> dict[str, Any]:
         """Get headers."""
-        headers = self._headers
         if self.test_mode:
             return {
-                **headers,
+                **self._headers,
                 CLASS_HEADER: enum_.__class__.__name__,
                 ENUM_HEADER: enum_.name,
                 ADDITIONAL_PATH_HEADER: additional_path or "",
             }
-        return headers
+        return self._headers
 
     async def fetch(
         self,

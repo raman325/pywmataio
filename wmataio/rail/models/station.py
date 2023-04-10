@@ -35,11 +35,11 @@ class StationData(TypedDict):
 class Station:
     """MetroRail Station."""
 
-    bus: "MetroRail"
-    data: StationData
-    parking: "StationParking" | None
-    entrances: list["StationEntrance"]
-    station_times: list["StationTime"]
+    rail: "MetroRail" = field(repr=False)
+    data: StationData = field(repr=False)
+    parking: "StationParking" | None = field(repr=False)
+    entrances: list["StationEntrance"] = field(repr=False)
+    station_times: list["StationTime"] = field(repr=False)
     address: Address = field(init=False)
     station_code: str = field(init=False)
     coordinates: Coordinates = field(init=False)
@@ -47,11 +47,6 @@ class Station:
     name: str = field(init=False)
     station_together_code_1: str | None = field(init=False)
     station_together_code_2: str | None = field(init=False)
-
-    def __repr__(self) -> str:
-        """Return the representation."""
-        cls_name = type(self).__name__
-        return f"{cls_name}(code={self.station_code}, name={self.name})"
 
     def __hash__(self) -> int:
         """Return the hash."""
@@ -78,18 +73,18 @@ class Station:
     @property
     def lines(self) -> list["Line"]:
         """Return the lines."""
-        return [self.bus.lines[line_code] for line_code in self.line_codes]
+        return [self.rail.lines[line_code] for line_code in self.line_codes]
 
     @property
     def station_together_1(self) -> "Station" | None:
         """Return the station together 1."""
         if not self.station_together_code_1:
             return None
-        return self.bus.stations[self.station_together_code_1]
+        return self.rail.stations[self.station_together_code_1]
 
     @property
     def station_together_2(self) -> "Station" | None:
         """Return the station together 2."""
         if not self.station_together_code_2:
             return None
-        return self.bus.stations[self.station_together_code_2]
+        return self.rail.stations[self.station_together_code_2]

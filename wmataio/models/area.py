@@ -23,6 +23,10 @@ class Area:
         self.radius = radius
         self.coordinates = Coordinates(latitude, longitude)
 
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash((self.radius, self.coordinates))
+
     def to_dict(self) -> dict[str, int | float]:
         """Return a dict representation of the search area parameters."""
         return {

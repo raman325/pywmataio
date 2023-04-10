@@ -36,8 +36,8 @@ class LiveTrainPositionData(TypedDict):
 class LiveTrainPosition:
     """A MetroRail Bus LiveTrainPosition."""
 
-    bus: "MetroRail"
-    data: LiveTrainPositionData
+    rail: "MetroRail" = field(repr=False)
+    data: LiveTrainPositionData = field(repr=False)
     car_count: int = field(init=False)
     circuit_id: int = field(init=False)
     destination_station_code: str | None = field(init=False)
@@ -62,16 +62,22 @@ class LiveTrainPosition:
         self.train_id = self.data["TrainId"]
         self.train_number = self.data["TrainNumber"]
 
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash(
+            (self.train_id, self.circuit_id, self.line, self.destination_station)
+        )
+
     @property
     def destination_station(self) -> "Station" | None:
         """Return the destination station."""
         if not self.destination_station_code:
             return None
-        return self.bus.stations[self.destination_station_code]
+        return self.rail.stations[self.destination_station_code]
 
     @property
     def line(self) -> "Line" | None:
         """Return the line."""
         if not self.line_code:
             return None
-        return self.bus.lines[self.line_code]
+        return self.rail.lines[self.line_code]

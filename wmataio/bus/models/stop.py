@@ -25,17 +25,12 @@ class StopData(TypedDict, total=False):
 class Stop:
     """A MetroBus Stop."""
 
-    bus: "MetroBus"
-    data: StopData
+    bus: "MetroBus" = field(repr=False)
+    data: StopData = field(repr=False)
     stop_id: str = field(init=False)
-    coordinates: Coordinates = field(init=False)
+    coordinates: Coordinates = field(init=False, repr=False)
     name: str = field(init=False)
     route_ids: list[str] = field(init=False)
-
-    def __repr__(self) -> str:
-        """Return the representation."""
-        cls_name = type(self).__name__
-        return f"{cls_name}(code={self.stop_id}, name={self.name})"
 
     def __hash__(self) -> int:
         """Return the hash."""
@@ -52,6 +47,6 @@ class Stop:
         self.route_ids = self.data["Routes"]
 
     @property
-    def routes(self) -> list["Route"]:
+    def routes(self) -> set["Route"]:
         """Return routes for this stop."""
-        return [self.bus.routes[route_id] for route_id in self.route_ids]
+        return {self.bus.routes[route_id] for route_id in self.route_ids}

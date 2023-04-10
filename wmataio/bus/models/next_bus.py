@@ -24,8 +24,8 @@ class NextBusData(TypedDict):
 class NextBus:
     """Next bus for a Stop."""
 
-    bus: "MetroBus"
-    data: NextBusData
+    bus: "MetroBus" = field(repr=False)
+    data: NextBusData = field(repr=False)
     direction_number: int = field(init=False)
     direction_text: str = field(init=False)
     minutes: int = field(init=False)
@@ -41,6 +41,10 @@ class NextBus:
         self.route_id = self.data["RouteID"]
         self.trip_id = self.data["TripID"]
         self.vehicle_id = self.data["VehicleID"]
+
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash((self.vehicle_id, self.trip_id, self.route, self.direction_number))
 
     @property
     def route(self) -> "Route":

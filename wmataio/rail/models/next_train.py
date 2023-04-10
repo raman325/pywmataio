@@ -29,8 +29,8 @@ class NextTrainData(TypedDict):
 class NextTrain:
     """NextTrain."""
 
-    bus: "MetroRail"
-    data: NextTrainData
+    rail: "MetroRail" = field(repr=False)
+    data: NextTrainData = field(repr=False)
     num_cars: int | None = field(init=False)
     destination: str = field(init=False)
     destination_station_code: str | None = field(init=False)
@@ -64,21 +64,25 @@ class NextTrain:
             with suppress(ValueError):
                 self.minutes = int(minutes)
 
+    def __hash__(self) -> int:
+        """Return the hash."""
+        return hash((self.location, self.destination_station, self.line))
+
     @property
     def destination_station(self) -> "Station" | None:
         """Return the destination Station."""
         if not self.destination_station_code:
             return None
-        return self.bus.stations[self.destination_station_code]
+        return self.rail.stations[self.destination_station_code]
 
     @property
     def line(self) -> "Line" | None:
         """Return the Line."""
         if not self.line_code:
             return None
-        return self.bus.lines[self.line_code]
+        return self.rail.lines[self.line_code]
 
     @property
     def location(self) -> "Station":
         """Return the location Station."""
-        return self.bus.stations[self.location_code]
+        return self.rail.stations[self.location_code]

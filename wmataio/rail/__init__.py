@@ -132,7 +132,13 @@ class MetroRail:
         info_data = await self.client.fetch(
             RailEndpoint.STATION_TO_STATION_INFO, params=params
         )
-        return StationToStation(self, path_data, info_data["StationToStationInfos"])
+        return StationToStation(
+            self,
+            from_station,
+            to_station,
+            path_data,
+            info_data["StationToStationInfos"],
+        )
 
     async def get_elevator_escalator_incidents(
         self, station: Station | None = None
