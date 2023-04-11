@@ -12,7 +12,7 @@ _LOGGER = logging.getLogger(__name__)
 
 
 async def get_lat_long_from_address(
-    address: list[str], session: ClientSession | None = None
+    address: str, session: ClientSession | None = None
 ) -> tuple[float, float] | None:
     """Get the lat long for a US address."""
     async with nullcontext(session) if session else ClientSession() as client_session:
