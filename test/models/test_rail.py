@@ -6,7 +6,7 @@ from wmataio.const import TZ
 from wmataio.rail.models.live_position import TrainDirection
 
 
-async def test_rail_apis(aioresponses):
+async def test_rail_apis(wmata_responses):
     """Callback for aioresponse."""
     client = Client("", test_mode=True)
     await client.rail.load_data()
