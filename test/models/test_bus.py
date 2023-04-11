@@ -1,13 +1,13 @@
 """Test pywmataio client for buses."""
 from datetime import date, datetime
 
+from wmataio.bus.util import find_direct_route_start_end_stop_pairs
 from wmataio.client import Client
 from wmataio.const import TZ
 from wmataio.models.area import Area
-from wmataio.bus.util import find_direct_route_start_end_stop_pairs
 
 
-async def test_bus_apis(aioresponses):
+async def test_bus_apis(wmata_responses):
     """Callback for aioresponse."""
     client = Client("", test_mode=True)
     await client.bus.load_data()
@@ -167,7 +167,7 @@ async def test_bus_apis(aioresponses):
     assert stop_arrival.end_time == datetime(2023, 3, 31, 5, 24, tzinfo=TZ)
 
 
-async def test_bus_utils(aioresponses):
+async def test_bus_utils(wmata_responses):
     """Tests for MetroBus utility functions."""
     client = Client("", test_mode=True)
     await client.bus.load_data()
