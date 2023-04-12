@@ -55,9 +55,9 @@ async def get_lat_long_from_address(
 async def get_stop_or_station_pairs_closest_to_coordinates(
     transit_instance: MetroBus | MetroRail,
     locations_dict: dict[str, T],
+    routes_func: Callable[[T], set[U]],
     start_coord: Coordinates,
     end_coord: Coordinates,
-    routes_func: Callable[[T], set[U]],
     max_pairs: int | None = 10,
     max_total_distance: float | None = None,
     dist_precision: int = 2,

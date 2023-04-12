@@ -30,9 +30,9 @@ async def test_get_stop_or_station_pairs_closest_to_coordinates(wmata_responses)
     pairs = await get_stop_or_station_pairs_closest_to_coordinates(
         client.bus,
         client.bus.stops,
+        lambda stop: stop.routes,
         Coordinates(38.9579014, -77.0343505),
         Coordinates(38.9200463, -77.0342637),
-        lambda x: x.routes,
         max_pairs=2,
     )
     assert len(pairs) == 2
@@ -45,9 +45,9 @@ async def test_get_stop_or_station_pairs_closest_to_coordinates(wmata_responses)
     pairs = await get_stop_or_station_pairs_closest_to_coordinates(
         client.bus,
         client.bus.stops,
+        lambda stop: stop.routes,
         Coordinates(38.9579014, -77.0343505),
         Coordinates(38.9200463, -77.0342637),
-        lambda x: x.routes,
         max_total_distance=0.2,
     )
     assert len(pairs) == 1
