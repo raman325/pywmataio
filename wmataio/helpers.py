@@ -24,14 +24,14 @@ StopDistanceType = tuple[T, float]
 
 
 def __dist_between(start: Coordinates, end: T) -> float:
-    """Get the distance between two coordinates."""
+    """Get the distance between a Coordinates and a Stop/Station."""
     return cast(
         float, haversine(astuple(start), astuple(end.coordinates), unit=Unit.MILES)
     )
 
 
 def __sorted_locations_and_dist(
-    locations_dict: dict[str, T], coordinate
+    locations_dict: dict[str, T], coordinate: Coordinates
 ) -> list[StopDistanceType]:
     """Sort the locations by distance from the given coordinate."""
     return sorted(
