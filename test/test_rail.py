@@ -49,7 +49,7 @@ async def test_rail_apis(wmata_responses):
     assert station.station_together_code_2 is None
     assert station.station_together_2 is None
     assert station.line_codes == ["RD"]
-    assert station.lines == [client.rail.lines["RD"]]
+    assert station.lines == {client.rail.lines["RD"]}
     assert station.coordinates.latitude == 38.898303
     assert station.coordinates.longitude == -77.028099
     assert station.address.street == "607 13th St. NW"
@@ -169,7 +169,7 @@ async def test_rail_apis(wmata_responses):
     )
     assert rail_incident.incident_type == "Alert"
     assert rail_incident.line_codes_affected == ["YL"]
-    assert rail_incident.lines_affected == [client.rail.lines["YL"]]
+    assert rail_incident.lines_affected == {client.rail.lines["YL"]}
     assert rail_incident.date_updated == datetime(2023, 3, 8, 5, 23, 33, tzinfo=TZ)
 
     next_trains = await client.rail.get_next_trains_at_station(

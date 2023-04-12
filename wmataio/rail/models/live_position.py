@@ -47,7 +47,8 @@ class LiveTrainPosition:
     service_type: Literal["NoPassengers", "Normal", "Special", "Unknown"] = field(
         init=False
     )
-    train_id: str = field(init=False)
+    train_id: str = field(init=False, repr=False)
+    id: str = field(init=False)
     train_number: str = field(init=False)
 
     def __post_init__(self) -> None:

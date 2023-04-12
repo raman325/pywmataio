@@ -71,9 +71,9 @@ class Station:
         )
 
     @property
-    def lines(self) -> list["Line"]:
+    def lines(self) -> set["Line"]:
         """Return the lines."""
-        return [self.rail.lines[line_code] for line_code in self.line_codes]
+        return {self.rail.lines[line_code] for line_code in self.line_codes}
 
     @property
     def station_together_1(self) -> "Station" | None:

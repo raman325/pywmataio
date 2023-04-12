@@ -13,7 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/raman325/pywmataio",
     packages=setuptools.find_packages(),
-    install_requires=["aiohttp"],
+    install_requires=["aiohttp>=3.8.4", "haversine>=2.8.0"],
     tests_require=[
         "aioresponses",
         "pytest",

@@ -26,12 +26,13 @@ class ShapePoint:
 
     data: ShapePointData = field(repr=False)
     coordinates: Coordinates = field(init=False)
-    sequence_number: int = field(init=False)
+    sequence_number: int = field(init=False, repr=False)
+    id: int = field(init=False)
 
     def __post_init__(self) -> None:
         """Post init."""
         self.coordinates = Coordinates(float(self.data["Lat"]), float(self.data["Lon"]))
-        self.sequence_number = int(self.data["SeqNum"])
+        self.id = self.sequence_number = int(self.data["SeqNum"])
 
     def __hash__(self) -> int:
         """Return the hash."""
@@ -54,7 +55,8 @@ class RoutePathDirection:
 
     route_path: RoutePath
     data: PathDirectionData = field(repr=False)
-    direction_num: int
+    direction_num: int = field(repr=False)
+    id: int = field(init=False)
     direction: str = field(init=False)
     shapes: list[ShapePoint] = field(init=False, repr=False)
     stops_data: list["StopData"] = field(init=False, repr=False)
@@ -62,6 +64,7 @@ class RoutePathDirection:
 
     def __post_init__(self) -> None:
         """Post init."""
+        self.id = self.direction_num
         self.direction = self.data["DirectionText"]
         self.shapes = sorted(
             [ShapePoint(shape_data) for shape_data in self.data["Shape"]],
@@ -98,7 +101,8 @@ class RoutePath:
 
     bus: "MetroBus" = field(repr=False)
     data: RoutePathData = field(repr=False)
-    route_id: str = field(init=False)
+    route_id: str = field(init=False, repr=False)
+    id: str = field(init=False)
     name: str = field(init=False)
     path_directions: dict[int, RoutePathDirection] = field(
         init=False, default_factory=dict, repr=False
@@ -106,7 +110,7 @@ class RoutePath:
 
     def __post_init__(self) -> None:
         """Post init."""
-        self.route_id = self.data["RouteID"]
+        self.id = self.route_id = self.data["RouteID"]
         self.name = self.data["Name"]
         if (direction_data := self.data["Direction0"]) is not None:
             self.path_directions[0] = RoutePathDirection(self, direction_data, 0)

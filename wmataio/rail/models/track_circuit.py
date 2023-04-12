@@ -51,13 +51,14 @@ class TrackCircuit:
 
     all_track_circuits: dict[int, TrackCircuit] = field(repr=False)
     data: TrackCircuitData = field(repr=False)
-    circuit_id: int = field(init=False)
+    circuit_id: int = field(init=False, repr=False)
+    id: int = field(init=False)
     neighbors: list[TrackCircuitNeighbor] = field(init=False)
     track: int = field(init=False)
 
     def __post_init__(self) -> None:
         """Post init."""
-        self.circuit_id = self.data["CircuitId"]
+        self.id = self.circuit_id = self.data["CircuitId"]
         self.neighbors = [
             TrackCircuitNeighbor(self, self.all_track_circuits, neighbor)
             for neighbor in self.data["Neighbors"]

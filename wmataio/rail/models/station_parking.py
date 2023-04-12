@@ -90,14 +90,15 @@ class StationParking:
 
     rail: "MetroRail" = field(repr=False)
     data: StationParkingData = field(repr=False)
-    code: str = field(init=False)
+    code: str = field(init=False, repr=False)
+    id: str = field(init=False)
     notes: str | None = field(init=False)
     short_term_parking: ShortTermParking = field(init=False)
     all_day_parking: AllDayParking = field(init=False)
 
     def __post_init__(self) -> None:
         """Post init."""
-        self.code = self.data["Code"]
+        self.id = self.code = self.data["Code"]
         self.notes = self.data["Notes"] if self.data["Notes"] else None
         self.short_term_parking = ShortTermParking(self, self.data["ShortTermParking"])
         self.all_day_parking = AllDayParking(self, self.data["AllDayParking"])

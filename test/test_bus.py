@@ -69,7 +69,7 @@ async def test_bus_apis(wmata_responses):
     assert incident.incident_id == "B1D890F9-0A65-4FA4-A9AA-565B61CEC94A"
     assert incident.incident_type == "Alert"
     assert incident.route_ids_affected == ["96"]
-    assert incident.routes_affected == [client.bus.routes["96"]]
+    assert incident.routes_affected == {client.bus.routes["96"]}
     assert incident.description == (
         "Due to an incident at Tenleytown Station on the 96 route, "
         "buses are experiencing delays."
@@ -121,7 +121,7 @@ async def test_bus_apis(wmata_responses):
     direction_schedule = direction_schedules[0]
     assert direction_schedule.route_id == "10A"
     assert direction_schedule.route == client.bus.routes["10A"]
-    assert direction_schedule.trip_direction == "NORTH"
+    assert direction_schedule.direction == "NORTH"
     assert direction_schedule.trip_headsign == "PENTAGON"
     assert direction_schedule.start_time == datetime(2023, 3, 31, 4, 25, tzinfo=TZ)
     assert direction_schedule.end_time == datetime(2023, 3, 31, 5, 7, tzinfo=TZ)
@@ -158,7 +158,7 @@ async def test_bus_apis(wmata_responses):
     stop_arrival = stop_schedule[0]
     assert stop_arrival.route_id == "V4"
     assert stop_arrival.route == client.bus.routes["V4"]
-    assert stop_arrival.trip_direction_text == "EAST"
+    assert stop_arrival.direction == "EAST"
     assert stop_arrival.trip_headsign == "CAPITOL HEIGHTS STATION"
     assert stop_arrival.trip_id == "3944060"
     assert stop_arrival.direction_number == 0

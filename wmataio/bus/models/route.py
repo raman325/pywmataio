@@ -18,7 +18,8 @@ class Route:
     """A MetroBus Route."""
 
     data: RouteData = field(repr=False)
-    route_id: str = field(init=False)
+    route_id: str = field(init=False, repr=False)
+    id: str = field(init=False)
     name: str = field(init=False)
     line_description: str = field(init=False)
 
@@ -28,6 +29,6 @@ class Route:
 
     def __post_init__(self) -> None:
         """Post init."""
-        self.route_id = self.data["RouteID"]
+        self.id = self.route_id = self.data["RouteID"]
         self.name = self.data["Name"]
         self.line_description = self.data["LineDescription"]

@@ -35,7 +35,8 @@ class RailIncident:
     data: RailIncidentData = field(repr=False)
     date_updated: datetime = field(init=False)
     description: str = field(init=False)
-    incident_id: str = field(init=False)
+    incident_id: str = field(init=False, repr=False)
+    id: str = field(init=False)
     incident_type: str = field(init=False)
     line_codes_affected: list[str] = field(init=False)
 
@@ -45,7 +46,7 @@ class RailIncident:
             tzinfo=TZ
         )
         self.description = self.data["Description"]
-        self.incident_id = self.data["IncidentID"]
+        self.id = self.incident_id = self.data["IncidentID"]
         self.incident_type = self.data["IncidentType"]
         self.line_codes_affected = [
             line_code.strip()
@@ -58,6 +59,6 @@ class RailIncident:
         return hash(self.incident_id)
 
     @property
-    def lines_affected(self) -> list["Line"]:
+    def lines_affected(self) -> set["Line"]:
         """Lines affected."""
-        return [self.rail.lines[line_code] for line_code in self.line_codes_affected]
+        return {self.rail.lines[line_code] for line_code in self.line_codes_affected}

@@ -47,6 +47,7 @@ class LiveBusPosition:
     trip_id: str = field(init=False)
     trip_start_time: datetime = field(init=False)
     vehicle_id: str = field(init=False)
+    id: str = field(init=False)
 
     def __post_init__(self) -> None:
         """Post init."""
@@ -65,7 +66,7 @@ class LiveBusPosition:
         self.trip_start_time = datetime.fromisoformat(
             self.data["TripStartTime"]
         ).replace(tzinfo=TZ)
-        self.vehicle_id = self.data["VehicleID"]
+        self.id = self.vehicle_id = self.data["VehicleID"]
 
     def __hash__(self) -> int:
         """Return the hash."""
