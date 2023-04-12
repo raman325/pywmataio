@@ -62,13 +62,14 @@ class StandardRoute:
 
     rail: "MetroRail" = field(repr=False)
     data: StandardRouteData = field(repr=False)
-    line_code: str = field(init=False)
+    line_code: str = field(init=False, repr=False)
+    id: str = field(init=False)
     track_circuits: list[StandardRoutesTrackCircuit] = field(init=False)
     track_number: Literal[1, 2] = field(init=False)
 
     def __post_init__(self) -> None:
         """Post init."""
-        self.line_code = self.data["LineCode"]
+        self.id = self.line_code = self.data["LineCode"]
         self.track_circuits = sorted(
             [
                 StandardRoutesTrackCircuit(self, track_circuit_data)

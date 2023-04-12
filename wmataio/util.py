@@ -7,13 +7,14 @@ from contextlib import nullcontext
 from aiohttp import ClientSession
 
 from .const import DEFAULT_GEOCODE_PARAMS, GEOCODE_URL
+from .models.coordinates import Coordinates
 
 _LOGGER = logging.getLogger(__name__)
 
 
 async def get_lat_long_from_address(
     address: str, session: ClientSession | None = None
-) -> tuple[float, float] | None:
+) -> Coordinates | None:
     """Get the lat long for a US address."""
     async with nullcontext(session) if session else ClientSession() as client_session:
         data = await client_session.get(
@@ -30,7 +31,7 @@ async def get_lat_long_from_address(
                 "Multiple addresses found for %s, returning the first one",
                 address,
             )
-        return (
-            found_addresses[0]["coordinates"]["x"],
+        return Coordinates(
             found_addresses[0]["coordinates"]["y"],
+            found_addresses[0]["coordinates"]["x"],
         )

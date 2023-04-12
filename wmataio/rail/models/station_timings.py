@@ -59,12 +59,14 @@ class DayTime:
     data: DayTimeData = field(repr=False)
     day: str
     day_of_week: int = field(repr=False)
+    id: int = field(init=False, repr=False)
     opening_time: time = field(init=False)
     first_trains: list[TrainTiming] = field(init=False)
     last_trains: list[TrainTiming] = field(init=False)
 
     def __post_init__(self) -> None:
         """Post init."""
+        self.id = self.day_of_week
         self.opening_time = time.fromisoformat(self.data["OpeningTime"]).replace(
             tzinfo=TZ
         )
@@ -100,13 +102,14 @@ class StationTime:
 
     rail: "MetroRail" = field(repr=False)
     data: StationTimeData = field(repr=False)
-    station_code: str = field(init=False)
+    station_code: str = field(init=False, repr=False)
+    id: str = field(init=False)
     name: str = field(init=False)
     days_of_week: dict[int, DayTime] = field(init=False)
 
     def __post_init__(self) -> None:
         """Post init."""
-        self.station_code = self.data["Code"]
+        self.id = self.station_code = self.data["Code"]
         self.name = self.data["StationName"]
         self.days_of_week = {
             1: DayTime(self, self.data["Monday"], "Monday", 1),

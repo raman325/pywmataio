@@ -3,6 +3,7 @@ from datetime import date, datetime, time
 
 from wmataio.client import Client
 from wmataio.const import TZ
+from wmataio.models.coordinates import Coordinates
 from wmataio.rail.models.live_position import TrainDirection
 
 
@@ -49,7 +50,7 @@ async def test_rail_apis(wmata_responses):
     assert station.station_together_code_2 is None
     assert station.station_together_2 is None
     assert station.line_codes == ["RD"]
-    assert station.lines == [client.rail.lines["RD"]]
+    assert station.lines == {client.rail.lines["RD"]}
     assert station.coordinates.latitude == 38.898303
     assert station.coordinates.longitude == -77.028099
     assert station.address.street == "607 13th St. NW"
@@ -169,7 +170,7 @@ async def test_rail_apis(wmata_responses):
     )
     assert rail_incident.incident_type == "Alert"
     assert rail_incident.line_codes_affected == ["YL"]
-    assert rail_incident.lines_affected == [client.rail.lines["YL"]]
+    assert rail_incident.lines_affected == {client.rail.lines["YL"]}
     assert rail_incident.date_updated == datetime(2023, 3, 8, 5, 23, 33, tzinfo=TZ)
 
     next_trains = await client.rail.get_next_trains_at_station(
@@ -214,3 +215,31 @@ async def test_rail_apis(wmata_responses):
     assert neighbor.neighbor_type == "Right"
     assert neighbor.circuit_ids == [2]
     assert neighbor.circuits == [track_circuits[2]]
+
+
+async def test_get_station_pairs_closest_to_coordinates(wmata_responses):
+    """Test get_station_pairs_closest_to_coordinates function."""
+    client = Client("", test_mode=True)
+
+    # Test with max_pairs
+    pairs = await client.rail.get_station_pairs_closest_to_coordinates(
+        Coordinates(38.9579014, -77.0343505),
+        Coordinates(38.9200463, -77.0342637),
+        max_pairs=2,
+    )
+    assert len(pairs) == 2
+    assert pairs == [
+        ((client.rail.stations["E05"], 1.59), (client.rail.stations["E03"], 0.38)),
+        ((client.rail.stations["B07"], 1.51), (client.rail.stations["A03"], 0.89)),
+    ]
+
+    # Test with max_total_distance
+    pairs = await client.rail.get_station_pairs_closest_to_coordinates(
+        Coordinates(38.9579014, -77.0343505),
+        Coordinates(38.9200463, -77.0342637),
+        max_total_distance=2,
+    )
+    assert len(pairs) == 1
+    assert pairs == [
+        ((client.rail.stations["E05"], 1.59), (client.rail.stations["E03"], 0.38))
+    ]

@@ -70,7 +70,7 @@ def _wmata_callback(url: str, **kwargs) -> CallbackResult:
     )
 
 
-@pytest.fixture(name="wmata_responses", scope="module")
+@pytest.fixture(name="wmata_responses")
 def mock_wmata_responses():
     """Mock aiohttp response from WMATA API."""
     with aioresponses() as m:
@@ -87,7 +87,7 @@ def _geocode_callback(url: str, **kwargs) -> CallbackResult:
     )
 
 
-@pytest.fixture(name="geocode_responses", scope="module")
+@pytest.fixture(name="geocode_responses")
 def mock_geocode_responses():
     """Mock aiohttp responses from geocode_service."""
     with aioresponses() as m:

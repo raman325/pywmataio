@@ -33,7 +33,8 @@ class Line:
     end_station_code: str = field(init=False)
     internal_destination_code_1: str | None = field(init=False, default=None)
     internal_destination_code_2: str | None = field(init=False, default=None)
-    line_code: str = field(init=False)
+    line_code: str = field(init=False, repr=False)
+    id: str = field(init=False)
 
     def __hash__(self) -> int:
         """Return the hash."""
@@ -41,7 +42,7 @@ class Line:
 
     def __post_init__(self) -> None:
         """Post init."""
-        self.line_code = self.data["LineCode"]
+        self.id = self.line_code = self.data["LineCode"]
         self.display_name = self.data["DisplayName"]
         self.start_station_code = self.data["StartStationCode"]
         self.end_station_code = self.data["EndStationCode"]

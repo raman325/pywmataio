@@ -5,6 +5,7 @@ from wmataio.bus.util import find_direct_route_start_end_stop_pairs
 from wmataio.client import Client
 from wmataio.const import TZ
 from wmataio.models.area import Area
+from wmataio.models.coordinates import Coordinates
 
 
 async def test_bus_apis(wmata_responses):
@@ -69,7 +70,7 @@ async def test_bus_apis(wmata_responses):
     assert incident.incident_id == "B1D890F9-0A65-4FA4-A9AA-565B61CEC94A"
     assert incident.incident_type == "Alert"
     assert incident.route_ids_affected == ["96"]
-    assert incident.routes_affected == [client.bus.routes["96"]]
+    assert incident.routes_affected == {client.bus.routes["96"]}
     assert incident.description == (
         "Due to an incident at Tenleytown Station on the 96 route, "
         "buses are experiencing delays."
@@ -121,7 +122,7 @@ async def test_bus_apis(wmata_responses):
     direction_schedule = direction_schedules[0]
     assert direction_schedule.route_id == "10A"
     assert direction_schedule.route == client.bus.routes["10A"]
-    assert direction_schedule.trip_direction == "NORTH"
+    assert direction_schedule.direction == "NORTH"
     assert direction_schedule.trip_headsign == "PENTAGON"
     assert direction_schedule.start_time == datetime(2023, 3, 31, 4, 25, tzinfo=TZ)
     assert direction_schedule.end_time == datetime(2023, 3, 31, 5, 7, tzinfo=TZ)
@@ -158,7 +159,7 @@ async def test_bus_apis(wmata_responses):
     stop_arrival = stop_schedule[0]
     assert stop_arrival.route_id == "V4"
     assert stop_arrival.route == client.bus.routes["V4"]
-    assert stop_arrival.trip_direction_text == "EAST"
+    assert stop_arrival.direction == "EAST"
     assert stop_arrival.trip_headsign == "CAPITOL HEIGHTS STATION"
     assert stop_arrival.trip_id == "3944060"
     assert stop_arrival.direction_number == 0
@@ -181,3 +182,31 @@ async def test_bus_utils(wmata_responses):
     assert next(direction for direction in data[(stop_1, stop_2)]).direction == "NORTH"
 
     assert (stop_2, stop_1) not in data
+
+
+async def test_get_stop_pairs_closest_to_coordinates(wmata_responses):
+    """Test get_stop_pairs_closest_to_coordinates function."""
+    client = Client("", test_mode=True)
+
+    # Test with max_pairs
+    pairs = await client.bus.get_stop_pairs_closest_to_coordinates(
+        Coordinates(38.9579014, -77.0343505),
+        Coordinates(38.9200463, -77.0342637),
+        max_pairs=2,
+    )
+    assert len(pairs) == 2
+    assert pairs == [
+        ((client.bus.stops["1002631"], 0.07), (client.bus.stops["1001746"], 0.12)),
+        ((client.bus.stops["1002920"], 0.11), (client.bus.stops["1001777"], 0.13)),
+    ]
+
+    # Test with max_total_distance
+    pairs = await client.bus.get_stop_pairs_closest_to_coordinates(
+        Coordinates(38.9579014, -77.0343505),
+        Coordinates(38.9200463, -77.0342637),
+        max_total_distance=0.2,
+    )
+    assert len(pairs) == 1
+    assert pairs == [
+        ((client.bus.stops["1002631"], 0.07), (client.bus.stops["1001746"], 0.12))
+    ]

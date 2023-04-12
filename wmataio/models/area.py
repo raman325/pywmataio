@@ -1,4 +1,5 @@
 """Model for area search data."""
+from dataclasses import dataclass, field
 from typing import TypedDict
 
 from .coordinates import Coordinates
@@ -12,16 +13,20 @@ class AreaData(TypedDict):
     Lon: float
 
 
+@dataclass
 class Area:
     """Represent search area parameters."""
 
     radius: int
-    coordinates: Coordinates
+    latitude: float = field(repr=False)
+    longitude: float = field(repr=False)
+    coordinates: Coordinates = field(init=False)
 
-    def __init__(self, radius: int, latitude: float, longitude: float) -> None:
-        """Initialize the search area parameters."""
-        self.radius = radius
-        self.coordinates = Coordinates(latitude, longitude)
+    def __post_init__(self) -> None:
+        """Post init."""
+        self.coordinates = Coordinates(self.latitude, self.longitude)
+        del self.latitude
+        del self.longitude
 
     def __hash__(self) -> int:
         """Return the hash."""

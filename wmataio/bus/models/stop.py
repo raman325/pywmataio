@@ -27,7 +27,8 @@ class Stop:
 
     bus: "MetroBus" = field(repr=False)
     data: StopData = field(repr=False)
-    stop_id: str = field(init=False)
+    stop_id: str = field(init=False, repr=False)
+    id: str = field(init=False)
     coordinates: Coordinates = field(init=False, repr=False)
     name: str = field(init=False)
     route_ids: list[str] = field(init=False)
@@ -39,9 +40,9 @@ class Stop:
     def __post_init__(self) -> None:
         """Post init."""
         if isinstance(self.data["StopID"], str):
-            self.stop_id = self.data["StopID"]
+            self.id = self.stop_id = self.data["StopID"]
         else:
-            self.stop_id = self.data["Name"]
+            self.id = self.stop_id = self.data["Name"]
         self.coordinates = Coordinates(self.data["Lat"], self.data["Lon"])
         self.name = self.data["Name"]
         self.route_ids = self.data["Routes"]

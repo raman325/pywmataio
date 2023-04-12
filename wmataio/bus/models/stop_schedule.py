@@ -38,7 +38,7 @@ class StopArrival:
     route_id: str = field(init=False)
     schedule_time: datetime = field(init=False)
     start_time: datetime = field(init=False)
-    trip_direction_text: str = field(init=False)
+    direction: str = field(init=False)
     trip_headsign: str = field(init=False)
     trip_id: str = field(init=False)
 
@@ -53,7 +53,7 @@ class StopArrival:
         self.start_time = datetime.fromisoformat(self.data["StartTime"]).replace(
             tzinfo=TZ
         )
-        self.trip_direction_text = self.data["TripDirectionText"]
+        self.direction = self.data["TripDirectionText"]
         self.trip_headsign = self.data["TripHeadsign"]
         self.trip_id = self.data["TripID"]
 

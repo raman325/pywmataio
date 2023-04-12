@@ -31,6 +31,7 @@ class BusIncident:
     date_updated: datetime = field(init=False)
     description: str = field(init=False)
     incident_id: str = field(init=False)
+    id: str = field(init=False)
     incident_type: str = field(init=False)
     route_ids_affected: list[str] = field(init=False)
 
@@ -41,7 +42,7 @@ class BusIncident:
         )
         self.description = self.data["Description"]
         self.incident_type = self.data["IncidentType"]
-        self.incident_id = self.data["IncidentID"]
+        self.id = self.incident_id = self.data["IncidentID"]
         self.route_ids_affected = self.data["RoutesAffected"]
 
     def __hash__(self) -> int:
@@ -49,6 +50,6 @@ class BusIncident:
         return hash(self.incident_id)
 
     @property
-    def routes_affected(self) -> list["Route"]:
+    def routes_affected(self) -> set["Route"]:
         """Return routes affected by this incident."""
-        return [self.bus.routes[route_id] for route_id in self.route_ids_affected]
+        return {self.bus.routes[route_id] for route_id in self.route_ids_affected}

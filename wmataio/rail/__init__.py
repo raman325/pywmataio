@@ -5,6 +5,8 @@ import asyncio
 from collections import defaultdict
 from typing import TYPE_CHECKING, cast
 
+from ..helpers import get_stop_or_station_pairs_closest_to_coordinates
+from ..models.coordinates import Coordinates
 from .const import RailEndpoint
 from .models.elevator_and_escalator_incident import ElevatorAndEscalatorIncident
 from .models.line import Line
@@ -215,3 +217,41 @@ class MetroRail:
                 track_circuits, track_circuit
             )
         return track_circuits
+
+    async def get_station_pairs_closest_to_coordinates(
+        self,
+        start_coordinates: Coordinates,
+        end_coordinates: Coordinates,
+        max_pairs: int = 10,
+        max_total_distance: float | None = None,
+        dist_precision: int = 2,
+    ) -> list[tuple[tuple[Station, float], tuple[Station, float]]]:
+        """
+        Get the closest station pairs to the start and end coordinates.
+
+        Params:
+        - `start_coordinates`: Coordinates of the start location.
+        - `end_coordinates`: Coordinates of the end location.
+        - `max_pairs`: The maximum number of pairs to return. <=0 returns all pairs.
+        - `max_total_distance`: The maximum total distance between the start and end
+           coordinates and the closest stations in miles to return pairs for. Distance
+           is measured as the crow flies so walking distance may be longer. `None`
+           ignores this check.
+        - `dist_precision` is the number of decimal places to round the distance to.
+
+        Returns: A list of tuples of the form ((start_station, distance),
+        (end_station, distance)) where distance is the distance in miles between the
+        corresponding coordinate and Station.
+        """
+        if not self.stations or not self.lines:
+            await self.load_data()
+
+        return await get_stop_or_station_pairs_closest_to_coordinates(
+            self.stations,
+            lambda station: station.lines,
+            start_coordinates,
+            end_coordinates,
+            max_pairs,
+            max_total_distance,
+            dist_precision,
+        )

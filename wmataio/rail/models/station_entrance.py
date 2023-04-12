@@ -30,7 +30,8 @@ class StationEntrance:
     rail: "MetroRail" = field(repr=False)
     data: StationEntranceData = field(repr=False)
     description: str = field(init=False)
-    entrance_id: str = field(init=False)
+    entrance_id: str = field(init=False, repr=False)
+    id: str = field(init=False)
     coordinates: Coordinates = field(init=False)
     name: str = field(init=False)
     station_code_1: str = field(init=False)
@@ -39,7 +40,7 @@ class StationEntrance:
     def __post_init__(self) -> None:
         """Post init."""
         self.description = self.data["Description"]
-        self.entrance_id = self.data["ID"]
+        self.id = self.entrance_id = self.data["ID"]
         self.coordinates = Coordinates(self.data["Lat"], self.data["Lon"])
         self.name = self.data["Name"]
         self.station_code_1 = self.data["StationCode1"]

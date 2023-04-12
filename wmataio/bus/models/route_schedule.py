@@ -28,14 +28,15 @@ class StopTime:
 
     direction_schedule: DirectionSchedule
     data: StopTimeData = field(repr=False)
-    stop_id: str = field(init=False)
+    stop_id: str = field(init=False, repr=False)
+    id: str = field(init=False)
     stop_name: str = field(init=False)
     stop_sequence: int = field(init=False)
     time: datetime = field(init=False)
 
     def __post_init__(self) -> None:
         """Post init."""
-        self.stop_id = self.data["StopID"]
+        self.id = self.stop_id = self.data["StopID"]
         self.stop_name = self.data["StopName"]
         self.stop_sequence = self.data["StopSeq"]
         self.time = datetime.fromisoformat(self.data["Time"]).replace(tzinfo=TZ)
@@ -69,19 +70,21 @@ class DirectionSchedule:
 
     route_schedule: RouteSchedule
     data: DirectionScheduleData = field(repr=False)
-    direction_num: int
+    direction_num: int = field(repr=False)
+    id: int = field(init=False)
     end_time: datetime = field(init=False)
     route_id: str = field(init=False, repr=False)
     route: Route = field(init=False)
     start_time: datetime = field(init=False)
     stop_times_data: list[StopTimeData] = field(init=False, repr=False)
     stop_times: list[StopTime] = field(init=False)
-    trip_direction: str = field(init=False)
+    direction: str = field(init=False)
     trip_headsign: str = field(init=False)
     trip_id: str = field(init=False)
 
     def __post_init__(self) -> None:
         """Post init."""
+        self.id = self.direction_num
         self.end_time = datetime.fromisoformat(self.data["EndTime"]).replace(tzinfo=TZ)
         self.route_id = self.data["RouteID"]
         self.route = self.route_schedule.bus.routes[self.route_id]
@@ -93,7 +96,7 @@ class DirectionSchedule:
             [StopTime(self, stop_time_data) for stop_time_data in self.stop_times_data],
             key=lambda stop_time: stop_time.stop_sequence,
         )
-        self.trip_direction = self.data["TripDirectionText"]
+        self.direction = self.data["TripDirectionText"]
         self.trip_headsign = self.data["TripHeadsign"]
         self.trip_id = self.data["TripID"]
 
