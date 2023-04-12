@@ -4,7 +4,7 @@ from __future__ import annotations
 from datetime import date
 from typing import TYPE_CHECKING, Any, cast
 
-from ..helpers import _get_stop_or_station_pairs_closest_to_coordinates
+from ..helpers import get_stop_or_station_pairs_closest_to_coordinates
 from ..models.area import Area
 from ..models.coordinates import Coordinates
 from .const import BusEndpoint
@@ -193,8 +193,8 @@ class MetroBus:
 
     async def get_stop_pairs_closest_to_coordinates(
         self,
-        start_coord: Coordinates,
-        end_coord: Coordinates,
+        start_coordinates: Coordinates,
+        end_coordinates: Coordinates,
         max_pairs: int | None = 10,
         max_total_distance: float | None = None,
         dist_precision: int = 2,
@@ -203,11 +203,11 @@ class MetroBus:
         if not self.stops or not self.routes:
             await self.load_data()
 
-        return await _get_stop_or_station_pairs_closest_to_coordinates(
+        return await get_stop_or_station_pairs_closest_to_coordinates(
             self.stops,
             lambda stop: stop.routes,
-            start_coord,
-            end_coord,
+            start_coordinates,
+            end_coordinates,
             max_pairs,
             max_total_distance,
             dist_precision,

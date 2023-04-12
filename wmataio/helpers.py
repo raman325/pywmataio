@@ -1,7 +1,7 @@
 """
 Helper functions for pywmataio modules.
 
-For internal use only.
+Generally should only be used internally.
 """
 from __future__ import annotations
 
@@ -43,7 +43,7 @@ def __sorted_locations_and_dist(
     )
 
 
-async def _get_stop_or_station_pairs_closest_to_coordinates(
+async def get_stop_or_station_pairs_closest_to_coordinates(
     locations_dict: dict[str, T],
     routes_func: Callable[[T], set[U]],
     start_coordinate: Coordinates,

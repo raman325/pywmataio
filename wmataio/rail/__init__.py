@@ -5,7 +5,7 @@ import asyncio
 from collections import defaultdict
 from typing import TYPE_CHECKING, cast
 
-from ..helpers import _get_stop_or_station_pairs_closest_to_coordinates
+from ..helpers import get_stop_or_station_pairs_closest_to_coordinates
 from ..models.coordinates import Coordinates
 from .const import RailEndpoint
 from .models.elevator_and_escalator_incident import ElevatorAndEscalatorIncident
@@ -220,8 +220,8 @@ class MetroRail:
 
     async def get_station_pairs_closest_to_coordinates(
         self,
-        start_coord: Coordinates,
-        end_coord: Coordinates,
+        start_coordinates: Coordinates,
+        end_coordinates: Coordinates,
         max_pairs: int | None = 10,
         max_total_distance: float | None = None,
         dist_precision: int = 2,
@@ -230,11 +230,11 @@ class MetroRail:
         if not self.stations or not self.lines:
             await self.load_data()
 
-        return await _get_stop_or_station_pairs_closest_to_coordinates(
+        return await get_stop_or_station_pairs_closest_to_coordinates(
             self.stations,
             lambda station: station.lines,
-            start_coord,
-            end_coord,
+            start_coordinates,
+            end_coordinates,
             max_pairs,
             max_total_distance,
             dist_precision,
