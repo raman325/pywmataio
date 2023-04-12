@@ -52,7 +52,7 @@ async def get_lat_long_from_address(
         )
 
 
-async def get_closest_stop_or_station_pairs_to_coordinates(
+async def get_stop_or_station_pairs_closest_to_coordinates(
     transit_instance: MetroBus | MetroRail,
     locations_dict: dict[str, T],
     start_coord: Coordinates,

@@ -2,7 +2,7 @@
 from wmataio.client import Client
 from wmataio.models.coordinates import Coordinates
 from wmataio.util import (
-    get_closest_stop_or_station_pairs_to_coordinates,
+    get_stop_or_station_pairs_closest_to_coordinates,
     get_lat_long_from_address,
 )
 
@@ -21,13 +21,13 @@ async def test_get_lat_long_from_address(geocode_responses):
     )
 
 
-async def test_get_closest_stop_or_station_pairs_to_coordinates(wmata_responses):
-    """Test get_closest_stop_or_station_pairs_to_coordinates function."""
+async def test_get_stop_or_station_pairs_closest_to_coordinates(wmata_responses):
+    """Test get_stop_or_station_pairs_closest_to_coordinates function."""
     client = Client("", test_mode=True)
     await client.bus.load_data()
 
     # Test with max_pairs
-    pairs = await get_closest_stop_or_station_pairs_to_coordinates(
+    pairs = await get_stop_or_station_pairs_closest_to_coordinates(
         client.bus,
         client.bus.stops,
         Coordinates(38.9579014, -77.0343505),
@@ -42,7 +42,7 @@ async def test_get_closest_stop_or_station_pairs_to_coordinates(wmata_responses)
     ]
 
     # Test with max_total_distance
-    pairs = await get_closest_stop_or_station_pairs_to_coordinates(
+    pairs = await get_stop_or_station_pairs_closest_to_coordinates(
         client.bus,
         client.bus.stops,
         Coordinates(38.9579014, -77.0343505),
