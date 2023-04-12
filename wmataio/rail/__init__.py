@@ -222,11 +222,27 @@ class MetroRail:
         self,
         start_coordinates: Coordinates,
         end_coordinates: Coordinates,
-        max_pairs: int | None = 10,
+        max_pairs: int = 10,
         max_total_distance: float | None = None,
         dist_precision: int = 2,
     ) -> list[tuple[tuple[Station, float], tuple[Station, float]]]:
-        """Get the closest station pairs to the start and end coordinates."""
+        """
+        Get the closest station pairs to the start and end coordinates.
+
+        Params:
+        - `start_coordinates`: Coordinates of the start location.
+        - `end_coordinates`: Coordinates of the end location.
+        - `max_pairs`: The maximum number of pairs to return. <=0 returns all pairs.
+        - `max_total_distance`: The maximum total distance between the start and end
+           coordinates and the closest stations in miles to return pairs for. Distance
+           is measured as the crow flies so walking distance may be longer. `None`
+           ignores this check.
+        - `dist_precision` is the number of decimal places to round the distance to.
+
+        Returns: A list of tuples of the form ((start_station, distance),
+        (end_station, distance)) where distance is the distance in miles between the
+        corresponding coordinates and stations.
+        """
         if not self.stations or not self.lines:
             await self.load_data()
 
