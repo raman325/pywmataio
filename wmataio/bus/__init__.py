@@ -4,7 +4,9 @@ from __future__ import annotations
 from datetime import date
 from typing import TYPE_CHECKING, Any, cast
 
+from ..helpers import _get_stop_or_station_pairs_closest_to_coordinates
 from ..models.area import Area
+from ..models.coordinates import Coordinates
 from .const import BusEndpoint
 from .models.bus_incident import BusIncident
 from .models.live_position import LiveBusPosition
@@ -187,4 +189,26 @@ class MetroBus:
                 for stop_arrival_schedule in data["ScheduleArrivals"]
             ],
             key=lambda stop_arrival_schedule: stop_arrival_schedule.schedule_time,
+        )
+
+    async def get_stop_pairs_closest_to_coordinates(
+        self,
+        start_coord: Coordinates,
+        end_coord: Coordinates,
+        max_pairs: int | None = 10,
+        max_total_distance: float | None = None,
+        dist_precision: int = 2,
+    ) -> list[tuple[tuple[Stop, float], tuple[Stop, float]]]:
+        """Get the closest station pairs to the start and end coordinates."""
+        if not self.stops or not self.routes:
+            await self.load_data()
+
+        return await _get_stop_or_station_pairs_closest_to_coordinates(
+            self.stops,
+            lambda stop: stop.routes,
+            start_coord,
+            end_coord,
+            max_pairs,
+            max_total_distance,
+            dist_precision,
         )

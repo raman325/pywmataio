@@ -5,6 +5,7 @@ from wmataio.bus.util import find_direct_route_start_end_stop_pairs
 from wmataio.client import Client
 from wmataio.const import TZ
 from wmataio.models.area import Area
+from wmataio.models.coordinates import Coordinates
 
 
 async def test_bus_apis(wmata_responses):
@@ -181,3 +182,31 @@ async def test_bus_utils(wmata_responses):
     assert next(direction for direction in data[(stop_1, stop_2)]).direction == "NORTH"
 
     assert (stop_2, stop_1) not in data
+
+
+async def test_get_stop_pairs_closest_to_coordinates(wmata_responses):
+    """Test get_stop_pairs_closest_to_coordinates function."""
+    client = Client("", test_mode=True)
+
+    # Test with max_pairs
+    pairs = await client.bus.get_stop_pairs_closest_to_coordinates(
+        Coordinates(38.9579014, -77.0343505),
+        Coordinates(38.9200463, -77.0342637),
+        max_pairs=2,
+    )
+    assert len(pairs) == 2
+    assert pairs == [
+        ((client.bus.stops["1002631"], 0.07), (client.bus.stops["1001746"], 0.12)),
+        ((client.bus.stops["1002920"], 0.11), (client.bus.stops["1001777"], 0.13)),
+    ]
+
+    # Test with max_total_distance
+    pairs = await client.bus.get_stop_pairs_closest_to_coordinates(
+        Coordinates(38.9579014, -77.0343505),
+        Coordinates(38.9200463, -77.0342637),
+        max_total_distance=0.2,
+    )
+    assert len(pairs) == 1
+    assert pairs == [
+        ((client.bus.stops["1002631"], 0.07), (client.bus.stops["1001746"], 0.12))
+    ]

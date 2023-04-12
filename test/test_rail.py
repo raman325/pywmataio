@@ -3,6 +3,7 @@ from datetime import date, datetime, time
 
 from wmataio.client import Client
 from wmataio.const import TZ
+from wmataio.models.coordinates import Coordinates
 from wmataio.rail.models.live_position import TrainDirection
 
 
@@ -214,3 +215,31 @@ async def test_rail_apis(wmata_responses):
     assert neighbor.neighbor_type == "Right"
     assert neighbor.circuit_ids == [2]
     assert neighbor.circuits == [track_circuits[2]]
+
+
+async def test_get_station_pairs_closest_to_coordinates(wmata_responses):
+    """Test get_station_pairs_closest_to_coordinates function."""
+    client = Client("", test_mode=True)
+
+    # Test with max_pairs
+    pairs = await client.rail.get_station_pairs_closest_to_coordinates(
+        Coordinates(38.9579014, -77.0343505),
+        Coordinates(38.9200463, -77.0342637),
+        max_pairs=2,
+    )
+    assert len(pairs) == 2
+    assert pairs == [
+        ((client.rail.stations["E05"], 1.59), (client.rail.stations["E03"], 0.38)),
+        ((client.rail.stations["B07"], 1.51), (client.rail.stations["A03"], 0.89)),
+    ]
+
+    # Test with max_total_distance
+    pairs = await client.rail.get_station_pairs_closest_to_coordinates(
+        Coordinates(38.9579014, -77.0343505),
+        Coordinates(38.9200463, -77.0342637),
+        max_total_distance=2,
+    )
+    assert len(pairs) == 1
+    assert pairs == [
+        ((client.rail.stations["E05"], 1.59), (client.rail.stations["E03"], 0.38))
+    ]
