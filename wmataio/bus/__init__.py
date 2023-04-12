@@ -214,7 +214,7 @@ class MetroBus:
 
         Returns: A list of tuples of the form ((start_stop, distance),
         (end_stop, distance)) where distance is the distance in miles between the
-        corresponding coordinates and stops.
+        corresponding coordinate and Stop.
         """
         if not self.stops or not self.routes:
             await self.load_data()

@@ -241,7 +241,7 @@ class MetroRail:
 
         Returns: A list of tuples of the form ((start_station, distance),
         (end_station, distance)) where distance is the distance in miles between the
-        corresponding coordinates and stations.
+        corresponding coordinate and Station.
         """
         if not self.stations or not self.lines:
             await self.load_data()
