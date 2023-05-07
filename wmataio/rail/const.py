@@ -14,7 +14,7 @@ class RailEndpoint(Enum):
     )
     RAIL_INCIDENTS = f"{BASE_WMATA_URL}/Incidents.svc/json/Incidents"
     LINES = f"{BASE_WMATA_URL}/Rail.svc/json/jLines"
-    NEXT_TRAINS = f"{BASE_WMATA_URL}/StationNextTrain.svc/json/GetNextTrain"
+    NEXT_TRAINS = f"{BASE_WMATA_URL}/StationNextTrain.svc/json/GetPrediction"
     STANDARD_ROUTES = f"{BASE_WMATA_URL}/TrainPositions/StandardRoutes"
     STATION_ENTRANCES = f"{BASE_WMATA_URL}/Rail.svc/json/jStationEntrances"
     STATION_INFORMATION = f"{BASE_WMATA_URL}/Rail.svc/json/jStationInfo"

@@ -3,16 +3,22 @@ from __future__ import annotations
 
 import logging
 from contextlib import nullcontext
+from datetime import datetime
 
 from aiohttp import ClientSession
 
-from .const import DEFAULT_GEOCODE_PARAMS, GEOCODE_URL
+from .const import DEFAULT_GEOCODE_PARAMS, GEOCODE_URL, TZ
 from .models.coordinates import Coordinates
 
 _LOGGER = logging.getLogger(__name__)
 
 
-async def get_lat_long_from_address(
+def get_datetime_from_str(dt_str: str) -> datetime:
+    """Get datetime from ISO formatted string."""
+    return datetime.fromisoformat(dt_str).replace(tzinfo=TZ)
+
+
+async def get_coordinates_from_address(
     address: str, session: ClientSession | None = None
 ) -> Coordinates | None:
     """Get the lat long for a US address."""

@@ -44,13 +44,13 @@ API_CALLS: dict[str, list[APICall]] = {
         },
         {
             "enum": BusEndpoint.ROUTE_SCHEDULE,
-            "params": {"RouteID": "10A", "IncludingVariations": False},
+            "params": {"RouteID": "10A", "IncludingVariations": "false"},
         },
         {
             "enum": BusEndpoint.ROUTE_SCHEDULE,
             "params": {
                 "RouteID": "10A",
-                "IncludingVariations": False,
+                "IncludingVariations": "false",
                 "Date": "2023-03-31",
             },
         },
@@ -110,7 +110,15 @@ async def call_api(
     additional_path: str | None,
 ):
     """Call API and return response."""
-    return await client.fetch(enum_, params=params, additional_path=additional_path)
+    try:
+        return await client.fetch(enum_, params=params, additional_path=additional_path)
+    except Exception as err:
+        print(
+            f"Error calling API: {enum_}\n"
+            f"Params: {params}\n"
+            f"Additional path: {additional_path}"
+        )
+        raise err
 
 
 base_path = pathlib.Path(__file__).parents[1]

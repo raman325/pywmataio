@@ -223,15 +223,17 @@ async def test_get_station_pairs_closest_to_coordinates(wmata_responses):
 
     # Test with max_pairs
     pairs = await client.rail.get_station_pairs_closest_to_coordinates(
-        Coordinates(38.9579014, -77.0343505),
-        Coordinates(38.9200463, -77.0342637),
-        max_pairs=2,
+        Coordinates(38.9579014, -77.0343505), Coordinates(38.9200463, -77.0342637)
     )
-    assert len(pairs) == 2
-    assert pairs == [
-        ((client.rail.stations["E05"], 1.59), (client.rail.stations["E03"], 0.38)),
-        ((client.rail.stations["B07"], 1.51), (client.rail.stations["A03"], 0.89)),
-    ]
+    assert len(pairs) == 3
+    assert pairs[0] == (
+        (client.rail.stations["E05"], 1.59),
+        (client.rail.stations["E03"], 0.38),
+    )
+    assert pairs[1] == (
+        (client.rail.stations["B07"], 1.51),
+        (client.rail.stations["A03"], 0.89),
+    )
 
     # Test with max_total_distance
     pairs = await client.rail.get_station_pairs_closest_to_coordinates(

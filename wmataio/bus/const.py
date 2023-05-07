@@ -10,9 +10,9 @@ class BusEndpoint(Enum):
     """Endpoints for all MetroBus APIs."""
 
     BUS_INCIDENTS = f"{BASE_WMATA_URL}/Incidents.svc/json/BusIncidents"
-    NEXT_BUSES = f"{BASE_WMATA_URL}/NextBusService.svc/json/jNextBuss"
+    NEXT_BUSES = f"{BASE_WMATA_URL}/NextBusService.svc/json/jPredictions"
     ROUTE_PATH = f"{BASE_WMATA_URL}/Bus.svc/json/jRouteDetails"
-    POSITIONS = f"{BASE_WMATA_URL}/Bus.svc/json/jBusLiveBusPositions"
+    POSITIONS = f"{BASE_WMATA_URL}/Bus.svc/json/jBusPositions"
     ROUTE_SCHEDULE = f"{BASE_WMATA_URL}/Bus.svc/json/jRouteSchedule"
     ROUTES = f"{BASE_WMATA_URL}/Bus.svc/json/jRoutes"
     STOP_SCHEDULE = f"{BASE_WMATA_URL}/Bus.svc/json/jStopSchedule"
