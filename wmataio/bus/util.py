@@ -56,7 +56,9 @@ async def get_route_directions_from_stop_pair(
     Returns tuple that contains route, forward path direction, and reverse path
     direction.
     """
-    directions: list[tuple[RoutePath, int | None, int | None]] = []
+    directions: list[
+        tuple[RoutePath, RoutePathDirection | None, RoutePathDirection | None]
+    ] = []
     for route in start_stop.routes.intersection(end_stop.routes):
         forward_direction: RoutePathDirection | None = None
         reverse_direction: RoutePathDirection | None = None
@@ -85,14 +87,14 @@ async def get_next_buses_from_stop_pair(
     Returns tuple that contains start stop bus arrivals that go to the end stop and
     end stop bus arrivals that go to the start stop sorted by arrival time.
     """
-    alL_start_stop_arrivals, all_end_stop_arrivals = await asyncio.gather(
+    all_start_stop_arrivals, all_end_stop_arrivals = await asyncio.gather(
         client.bus.get_stop_schedule(start_stop),
         client.bus.get_stop_schedule(end_stop),
     )
     start_stop_arrivals: ArrivalPair = []
     end_stop_arrivals: ArrivalPair = []
 
-    for start_stop_arrival in alL_start_stop_arrivals:
+    for start_stop_arrival in all_start_stop_arrivals:
         for end_stop_arrival in all_end_stop_arrivals:
             if end_stop_arrival.trip_id != start_stop_arrival.trip_id:
                 continue
