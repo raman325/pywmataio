@@ -5,6 +5,7 @@ import pathlib
 import re
 
 import pytest
+import pytest_socket
 from aioresponses import CallbackResult, aioresponses
 
 from wmataio.bus.const import BusEndpoint
@@ -23,6 +24,20 @@ WMATA_MODEL_CLASS_MAP = {
     BusEndpoint.__name__: {"class": BusEndpoint, "api_type": "bus"},
     RailEndpoint.__name__: {"class": RailEndpoint, "api_type": "rail"},
 }
+
+
+def pytest_runtest_setup() -> None:
+    """Prepare pytest_socket.
+
+    pytest_socket:
+    Throw if tests attempt to open sockets.
+
+    allow_unix_socket is set to True because it's needed by asyncio.
+    Important: socket_allow_hosts must be called before disable_socket, otherwise all
+    destinations will be allowed.
+    """
+    pytest_socket.socket_allow_hosts(["127.0.0.1"])
+    pytest_socket.disable_socket(allow_unix_socket=True)
 
 
 def _process_fixture_path_as_result(path: pathlib.Path) -> CallbackResult:

@@ -48,7 +48,6 @@ async def get_stop_or_station_pairs_closest_to_coordinates(
     routes_func: Callable[[T], set[U]],
     start_coordinate: Coordinates,
     end_coordinate: Coordinates,
-    max_pairs: int,
     max_total_distance: float | None,
     dist_precision: int,
 ) -> list[tuple[StopDistanceType, StopDistanceType]]:
@@ -101,8 +100,5 @@ async def get_stop_or_station_pairs_closest_to_coordinates(
         ]
 
     start_end_pairs = sorted(start_end_pairs, key=lambda pair: pair[0][1] + pair[1][1])
-
-    if max_pairs > 0:
-        return start_end_pairs[:max_pairs]
 
     return start_end_pairs

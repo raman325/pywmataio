@@ -5,7 +5,7 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from typing import TYPE_CHECKING, TypedDict
 
-from ...const import TZ
+from ...util import get_datetime_from_str
 
 if TYPE_CHECKING:
     from .. import MetroRail
@@ -42,9 +42,7 @@ class RailIncident:
 
     def __post_init__(self) -> None:
         """Post init."""
-        self.date_updated = datetime.fromisoformat(self.data["DateUpdated"]).replace(
-            tzinfo=TZ
-        )
+        self.date_updated = get_datetime_from_str(self.data["DateUpdated"])
         self.description = self.data["Description"]
         self.id = self.incident_id = self.data["IncidentID"]
         self.incident_type = self.data["IncidentType"]

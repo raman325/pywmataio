@@ -5,7 +5,7 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from typing import TYPE_CHECKING, TypedDict
 
-from ...const import TZ
+from ...util import get_datetime_from_str
 
 if TYPE_CHECKING:
     from .. import MetroBus
@@ -45,14 +45,10 @@ class StopArrival:
     def __post_init__(self) -> None:
         """Post init."""
         self.direction_number = int(self.data["DirectionNum"])
-        self.end_time = datetime.fromisoformat(self.data["EndTime"]).replace(tzinfo=TZ)
+        self.end_time = get_datetime_from_str(self.data["EndTime"])
         self.route_id = self.data["RouteID"]
-        self.schedule_time = datetime.fromisoformat(self.data["ScheduleTime"]).replace(
-            tzinfo=TZ
-        )
-        self.start_time = datetime.fromisoformat(self.data["StartTime"]).replace(
-            tzinfo=TZ
-        )
+        self.schedule_time = get_datetime_from_str(self.data["ScheduleTime"])
+        self.start_time = get_datetime_from_str(self.data["StartTime"])
         self.direction = self.data["TripDirectionText"]
         self.trip_headsign = self.data["TripHeadsign"]
         self.trip_id = self.data["TripID"]

@@ -5,7 +5,7 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from typing import TYPE_CHECKING, Literal, TypedDict
 
-from ...const import TZ
+from ...util import get_datetime_from_str
 
 if TYPE_CHECKING:
     from .. import MetroRail
@@ -48,16 +48,12 @@ class ElevatorAndEscalatorIncident:
 
     def __post_init__(self) -> None:
         """Post init."""
-        self.date_out_of_service = datetime.fromisoformat(
-            self.data["DateOutOfServ"]
-        ).replace(tzinfo=TZ)
-        self.date_updated = datetime.fromisoformat(self.data["DateUpdated"]).replace(
-            tzinfo=TZ
-        )
+        self.date_out_of_service = get_datetime_from_str(self.data["DateOutOfServ"])
+        self.date_updated = get_datetime_from_str(self.data["DateUpdated"])
         if estimated_return_to_service := self.data["EstimatedReturnToService"]:
-            self.estimated_return_to_service = datetime.fromisoformat(
+            self.estimated_return_to_service = get_datetime_from_str(
                 estimated_return_to_service
-            ).replace(tzinfo=TZ)
+            )
         self.location_description = self.data["LocationDescription"]
         self.station_code = self.data["StationCode"]
         self.station_name = self.data["StationName"]

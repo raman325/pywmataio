@@ -192,13 +192,16 @@ async def test_get_stop_pairs_closest_to_coordinates(wmata_responses):
     pairs = await client.bus.get_stop_pairs_closest_to_coordinates(
         Coordinates(38.9579014, -77.0343505),
         Coordinates(38.9200463, -77.0342637),
-        max_pairs=2,
     )
-    assert len(pairs) == 2
-    assert pairs == [
-        ((client.bus.stops["1002631"], 0.07), (client.bus.stops["1001746"], 0.12)),
-        ((client.bus.stops["1002920"], 0.11), (client.bus.stops["1001777"], 0.13)),
-    ]
+    assert len(pairs) == 166
+    assert pairs[0] == (
+        (client.bus.stops["1002631"], 0.07),
+        (client.bus.stops["1001746"], 0.12),
+    )
+    assert pairs[1] == (
+        (client.bus.stops["1002920"], 0.11),
+        (client.bus.stops["1001777"], 0.13),
+    )
 
     # Test with max_total_distance
     pairs = await client.bus.get_stop_pairs_closest_to_coordinates(

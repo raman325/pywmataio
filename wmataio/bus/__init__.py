@@ -195,7 +195,6 @@ class MetroBus:
         self,
         start_coordinates: Coordinates,
         end_coordinates: Coordinates,
-        max_pairs: int = 10,
         max_total_distance: float | None = None,
         dist_precision: int = 2,
     ) -> list[tuple[tuple[Stop, float], tuple[Stop, float]]]:
@@ -224,7 +223,6 @@ class MetroBus:
             lambda stop: stop.routes,
             start_coordinates,
             end_coordinates,
-            max_pairs,
             max_total_distance,
             dist_precision,
         )

@@ -5,8 +5,8 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from typing import TYPE_CHECKING, TypedDict
 
-from ...const import TZ
 from ...models.coordinates import Coordinates
+from ...util import get_datetime_from_str
 
 if TYPE_CHECKING:
     from .. import MetroBus
@@ -51,21 +51,15 @@ class LiveBusPosition:
 
     def __post_init__(self) -> None:
         """Post init."""
-        self.last_update = datetime.fromisoformat(self.data["DateTime"]).replace(
-            tzinfo=TZ
-        )
+        self.last_update = get_datetime_from_str(self.data["DateTime"])
         self.deviation = self.data["Deviation"]
         self.direction_text = self.data["DirectionText"]
         self.coordinates = Coordinates(self.data["Lat"], self.data["Lon"])
         self.route_id = self.data["RouteID"]
-        self.trip_end_time = datetime.fromisoformat(self.data["TripEndTime"]).replace(
-            tzinfo=TZ
-        )
+        self.trip_end_time = get_datetime_from_str(self.data["TripEndTime"])
         self.trip_headsign = self.data["TripHeadsign"]
         self.trip_id = self.data["TripID"]
-        self.trip_start_time = datetime.fromisoformat(
-            self.data["TripStartTime"]
-        ).replace(tzinfo=TZ)
+        self.trip_start_time = get_datetime_from_str(self.data["TripStartTime"])
         self.id = self.vehicle_id = self.data["VehicleID"]
 
     def __hash__(self) -> int:

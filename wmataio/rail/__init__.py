@@ -222,12 +222,11 @@ class MetroRail:
         self,
         start_coordinates: Coordinates,
         end_coordinates: Coordinates,
-        max_pairs: int = 10,
         max_total_distance: float | None = None,
         dist_precision: int = 2,
     ) -> list[tuple[tuple[Station, float], tuple[Station, float]]]:
         """
-        Get the closest station pairs to the start and end coordinates.
+        Get closest station pairs to the start and end coordinates on the same route.
 
         Params:
         - `start_coordinates`: Coordinates of the start location.
@@ -251,7 +250,6 @@ class MetroRail:
             lambda station: station.lines,
             start_coordinates,
             end_coordinates,
-            max_pairs,
             max_total_distance,
             dist_precision,
         )

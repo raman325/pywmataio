@@ -5,7 +5,7 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from typing import TYPE_CHECKING, TypedDict
 
-from ...const import TZ
+from ...util import get_datetime_from_str
 
 if TYPE_CHECKING:
     from .. import MetroBus
@@ -39,7 +39,7 @@ class StopTime:
         self.id = self.stop_id = self.data["StopID"]
         self.stop_name = self.data["StopName"]
         self.stop_sequence = self.data["StopSeq"]
-        self.time = datetime.fromisoformat(self.data["Time"]).replace(tzinfo=TZ)
+        self.time = get_datetime_from_str(self.data["Time"])
 
     def __hash__(self) -> int:
         """Return the hash."""
@@ -85,12 +85,10 @@ class DirectionSchedule:
     def __post_init__(self) -> None:
         """Post init."""
         self.id = self.direction_num
-        self.end_time = datetime.fromisoformat(self.data["EndTime"]).replace(tzinfo=TZ)
+        self.end_time = get_datetime_from_str(self.data["EndTime"])
         self.route_id = self.data["RouteID"]
         self.route = self.route_schedule.bus.routes[self.route_id]
-        self.start_time = datetime.fromisoformat(self.data["StartTime"]).replace(
-            tzinfo=TZ
-        )
+        self.start_time = get_datetime_from_str(self.data["StartTime"])
         self.stop_times_data = self.data["StopTimes"]
         self.stop_times = sorted(
             [StopTime(self, stop_time_data) for stop_time_data in self.stop_times_data],
